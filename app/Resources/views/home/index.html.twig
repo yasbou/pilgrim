@@ -1,0 +1,61 @@
+{% extends 'home/base.html.twig' %}
+
+{% block body %}
+
+<div class="head">
+
+</div>
+
+<!-- <img src="{{ asset('images/masjid.jpg') }}" alt="porte de la kaaba">  !-->
+<div class="header">
+    <h1><span>PILGRIM</span>.COM</h1>
+
+
+
+    <ul>
+      <li>Mention Légal</li>
+      <li>About Us</li>
+    </ul>
+
+</div>
+
+<div class="main">
+  <h2>Welcome To Makkah</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    <br> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+
+<div class="footer">
+  <h6>Nos services</h6>
+  <hr>
+
+  <div id="img-footer">
+
+    <ul>
+
+      <a href="#">
+        <li>
+            <img src="{{ asset('images/porte_kaaba.jpg') }}" alt="la porte de la kaaba">
+            <h5>Répertoire</h5>
+        </li>
+      </a>
+
+      <a href="{{ path('homeBlogpage') }}">
+        <li>
+          <img src="{{ asset('images/coran.jpg') }}" alt="le coran">
+          <h5>Notre Blog</h5>
+        </li>
+      </a>
+
+      <a href="#">
+      <li>
+        <img src="{{ asset('images/masjid_medine.jpg') }}" alt="la mosquée de médine">
+        <h5>Les Incontournables</h5>
+      </li>
+      </a>
+
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

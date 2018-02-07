@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{% block title %}Notre Blog{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styleHomeBlog.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+
+
+      <h1><span>LE BLOG</span> DE NAIMA</h1>
+
+        <div class="header">
+
+          <ul>
+            <li>ACCUEIL</li>
+            <li>CATÉGORIES</li>
+            <li>A PROPOS</li>
+            <li>CONTACT</li>
+          </ul>
+
+        </div>
+
+
+        {% endblock %}
+
+
+
+        {% block javascripts %}
+        <script
+			     src="http://code.jquery.com/jquery-3.3.1.min.js"
+			     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		       crossorigin="anonymous">
+        </script>
+        <script
+          src= "{{ asset('js/app.js') }}"
+          type="text/javascript">
+        </script>
+
+        {% endblock %}
+    </body>
+</html>

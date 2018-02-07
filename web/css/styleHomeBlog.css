@@ -1,0 +1,148 @@
+body{
+background-image: url('../images/kaaba.jpg');
+background-repeat: no-repeat;
+color: white;
+
+}
+
+.main{
+  margin: 0px auto;
+   position: relative;
+}
+
+
+.main::after{
+  content: "";
+  background: url('../images/caligraphie.jpg');
+  opacity: 0.02;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+
+h1{
+
+  margin-left: 20px;
+  margin-top: 50px;
+  font-size: 30px;
+
+
+}
+
+span{
+  color: #22A1C4;
+
+}
+
+
+
+
+
+
+.header{
+  background: #22A1C4;
+  padding: 10px;
+  text-align: center;
+  margin-top: 450px;
+
+}
+
+.header li{
+  text-align: center;
+  display: inline;
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  font-size: 15px;
+  margin: 15px;
+
+}
+
+#intro{
+  color: black;
+  width: 800px;
+  text-align: justify;
+  margin: 0px auto;
+  padding: 20px
+}
+
+
+.article{
+  display:block;
+  margin: 30px auto;
+  width: 900px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+
+}
+
+
+.article h3{
+  float: left;
+  color: grey;
+  margin-top: 30px;
+  margin-left: 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+
+.article h2{
+  padding-top: 10px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #22A1C4;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 200px
+}
+
+.article ul{
+
+  margin-left: 200px
+}
+
+.article li{
+
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline;
+  font-size: 10px;
+  color:black;
+
+}
+
+.article img{
+  margin-top : 10px;
+  margin-left : 10px;
+  width: 150px;
+  position: absolute;
+
+}
+
+.article p{
+
+  width: 500px;
+  display: inline-block;
+  text-align: justify;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  color: black;
+  margin-left: 200px;
+
+}
+
+.article hr{
+  margin-top: 50px;
+  width: 500px;
+  height: none;
+	border: none;
+	border-top: 1px dashed grey;
+
+}

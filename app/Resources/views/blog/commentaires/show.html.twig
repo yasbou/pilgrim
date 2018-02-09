@@ -1,0 +1,39 @@
+
+{% block body %}
+    <h1>Commentaire</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commentaire.id }}</td>
+            </tr>
+            <tr>
+                <th>Auteurcom</th>
+                <td>{{ commentaire.auteurCom }}</td>
+            </tr>
+            <tr>
+                <th>Datecom</th>
+                <td>{% if commentaire.dateCom %}{{ commentaire.dateCom|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Textcom</th>
+                <td>{{ commentaire.textCom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('blog_commentaires_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('blog_commentaires_edit', { 'id': commentaire.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

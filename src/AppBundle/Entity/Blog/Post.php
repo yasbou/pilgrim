@@ -64,7 +64,7 @@ class Post
      * @ORM\OneToMany(targetEntity="Commentaires", mappedBy="posts")
      *
      */
-    private $comentaires;
+    private $commentaires;
 
     /**
      * @var string
@@ -244,6 +244,11 @@ class Post
     {
         return $this->commentaires;
     }
+    public function __toString()
+    {
+    return $this->getTitre();
+    }
+
 
     /**
      * Set résumé

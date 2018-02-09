@@ -33,9 +33,9 @@ class Commentaires
     private $auteurCom;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date_com", type="datetime")
+     * @ORM\Column(name="date_com", type="string",length=255 )
      */
     private $dateCom;
 
@@ -49,7 +49,7 @@ class Commentaires
     /**
     * @ORM\ManyToOne(targetEntity="Post", inversedBy="commentaires")
     */
-    private $post;
+    private $posts;
 
 
     /**
@@ -133,6 +133,34 @@ class Commentaires
     {
         return $this->textCom;
     }
+
+
+
+    /**
+     * Get the value of Posts
+     *
+     * @return mixed
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * Set the value of Posts
+     *
+     * @param mixed posts
+     *
+     * @return self
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+
+        return $this;
+    }
+
+
 
 
 

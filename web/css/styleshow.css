@@ -1,0 +1,58 @@
+.show_article{
+  width: 800px;
+  margin: 30px auto;
+}
+
+.show_article img{
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+  height: 400px
+}
+
+.show_article span{
+  font-size: 30px;
+}
+
+.show_article h2{
+  font-size: 40px;
+  font-family: sans serif;
+  text-transform:capitalize;
+  color: black;
+  margin-top: 20px;
+}
+
+.show_article p{
+  color :black;
+  display: inline-block;
+  text-align: justify;
+  font-family: "PT Sans", sans-serif;
+  font-size: 19px;
+  font-family: 'Mukta Mahee', sans-serif;
+  line-height: normal;
+}
+
+.show_article li{
+
+  color: gray;
+  display: inline-block;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Mukta Mahee', sans-serif;
+}
+
+
+.commentaire{
+  color: black;
+  font-family: 'Mukta Mahee', sans-serif;
+  width: 800px;
+  margin: 30px auto;
+}
+
+.commentaire ul{
+  background-color : lightgoldenrodyellow;
+  margin-top: 20px;
+}

@@ -1,0 +1,51 @@
+
+{% block body %}
+    <h1>Post</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ post.titre }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ post.text }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ post.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if post.date %}{{ post.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Résumé</th>
+                <td>{{ post.résumé }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ post.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('blog_post_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('blog_post_edit', { 'id': post.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

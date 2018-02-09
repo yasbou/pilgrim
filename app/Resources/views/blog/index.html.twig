@@ -19,7 +19,7 @@
       {% for post in posts %}
       <div class="article">
         <img src="{{asset('images/'~ post.image)}}" alt="">
-          <h2>{{ post.titre}}</h2>
+          <a href="{{path('show', { 'id': post.id })}}"><h2>{{ post.titre}}</h2></a>
           <ul>
             <li>PAR {{ post.auteur }} - </li>
             <li> le {{ post.date | date('d-m-Y') }} - </li>
@@ -36,5 +36,6 @@
 
 
 </div>
+{% include 'blog/footer.html.twig' %}
 
 {% endblock %}

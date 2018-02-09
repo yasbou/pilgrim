@@ -1,0 +1,64 @@
+.footer{
+  background-color: #22A1C4;
+  font-family:  'Mukta Mahee', sans-serif;
+  margin-bottom: 100px;
+  text-align: center;
+   padding-bottom: 70px;
+
+}
+
+#titre_slogan{
+  line-height: 2;
+}
+
+.footer ul{
+
+  margin-top: 80px;
+}
+
+.footer li{
+
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.footer li .fa-desktop{
+  font-size: 100px;
+  margin-bottom: 20px;
+
+}
+
+.footer li .fa-dollar-sign{
+  font-size: 100px;
+  margin-bottom: 20px;
+
+}
+
+.footer h2{
+  font-size: 30px
+}
+
+
+.footer li .fa-space-shuttle{
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+
+.footer li p{
+  width: 190px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+
+.footer a{
+  background-color: white;
+  text-decoration: none;
+  color: #22A1C4;
+  padding: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+
+}

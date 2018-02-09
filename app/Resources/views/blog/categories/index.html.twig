@@ -1,0 +1,41 @@
+
+
+{% block body %}
+<body>
+    <h1>Categories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Categorienom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td><a href="{{ path('blog_categories_show', { 'id': category.id }) }}">{{ category.id }}</a></td>
+                <td>{{ category.categorieNom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('blog_categories_show', { 'id': category.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('blog_categories_edit', { 'id': category.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('blog_categories_new') }}">Create a new category</a>
+        </li>
+    </ul>
+  </body>
+{% endblock %}

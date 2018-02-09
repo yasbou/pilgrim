@@ -26,6 +26,25 @@ padding: 30px;
 
 }
 
+
+.head a{
+  color: white;
+  text-decoration: none;
+  float: right;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: bolder;
+}
+
+
+#user{
+  color: white;
+  text-decoration: none;
+  float: left;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+
+
 /* header */
 
 

@@ -69,9 +69,9 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="résumé", type="string", length=255)
+     * @ORM\Column(name="resume", type="string", length=255)
      */
-    private $résumé;
+    private $resume;
 
     /**
      * @var string
@@ -85,7 +85,7 @@ class Post
    {
        $this->isActive = true;
         $this->commentaires = new ArrayCollection();
-
+        $this->categories = new ArrayCollection();  
        // may not be needed, see section on salt below
        // $this->salt = md5(uniqid('', true));
    }
@@ -221,6 +221,7 @@ class Post
         return $this->categories;
     }
 
+
     /**
      * Set commentaires
      *
@@ -253,25 +254,25 @@ class Post
     /**
      * Set résumé
      *
-     * @param string $résumé
+     * @param string $resume
      *
      * @return Post
      */
-    public function setRésumé($résumé)
+    public function setResume($resume)
     {
-        $this->résumé = $résumé;
+        $this->resume = $resume;
 
         return $this;
     }
 
     /**
-     * Get résumé
+     * Get resume
      *
      * @return string
      */
-    public function getRésumé()
+    public function getResume()
     {
-        return $this->résumé;
+        return $this->resume;
     }
 
     /**

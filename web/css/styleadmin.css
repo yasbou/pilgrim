@@ -1,0 +1,71 @@
+body{
+  background: url('../images/desk.jpg');
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+
+.header{
+  background-color: #94D1E2;
+  color:white;
+  font-family: "Mukta Mahee", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.nav{
+
+  height: 400px;
+  text-align: center;
+  margin-top: 455px;
+  background-color: #22A1C4;
+  opacity: 0.8;
+   text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  color:white;
+  font-family: "Mukta Mahee", sans-serif;
+
+}
+
+.nav li{
+  color:lightgray;
+  display: inline-block;
+  padding-top: 100px;
+  margin-bottom: 90px
+}
+
+.nav span{
+  display: block;
+  color:white;
+  text-decoration: none;
+  width: 200px
+
+}
+
+.nav a{
+   opacity: 0.6;
+  color:lightgray;
+  text-decoration: none;
+}
+
+.nav a:hover{
+  opacity: 1;
+  color:white;
+
+  font-weight: bold;
+}
+
+.fa-comment-alt, .fa-pencil-alt, .fa-users, .fa-list{
+
+  font-size: 100px
+}
+
+#logout{
+
+  background-color: white;
+  color: #22A1C4;
+  padding: 20px;
+}

@@ -1,0 +1,23 @@
+{% extends 'admin/baseadmin.html.twig' %}
+{% block body %}
+
+<div class="header">
+
+    <p>bienvenu sur votre page d'admin</p>
+</div>
+
+
+
+<div class="nav">
+
+  <ul>
+    <li><a href="{{path('blog_post_index')}}"> <i class="fas fa-pencil-alt"></i> <span>  Mes articles</span> </a></li>
+    <li><a href="{{path('blog_categories_index')}}"> <i class="fas fa-list"></i> <span>Les catégories</span> </a> </li>
+    <li><a href="{{path('blog_commentaires_index')}}"> <i class="fas fa-comment-alt"></i> <span> Les commentaires</span> </a></li>
+    <li><a href="{{path('admin_user_index')}}"> <i class="fas fa-users"></i> <span>Les Users</span> </a></li>
+  </ul>
+
+  <a id="logout" href= "{{path('logout')}}"> Se Déconnecter</a>
+</div>
+
+{% endblock %}

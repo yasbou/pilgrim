@@ -16,9 +16,16 @@
         {% block body %}
 
 
-      <h1><span>LE BLOG</span> DE NAIMA</h1>
 
         <div class="header">
+
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+          <p id="user">Bonjour {{ app.user.username }} </p>
+
+
+          {% endif %}
+
 
           <ul>
             <li>ACCUEIL</li>
@@ -26,9 +33,19 @@
             <li>A PROPOS</li>
             <li>CONTACT</li>
           </ul>
+          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+          <a class='log' href="{{path('logout')}}">Déconnexion</a>
+
+          {% else %}
+
+          <a class="log" href="{{path('login')}}">Connexion</a>
+
+          {% endif %}
 
         </div>
 
+        <h1><span>LE BLOG</span> DE NAIMA</h1>
 
         {% endblock %}
 

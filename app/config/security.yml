@@ -26,11 +26,11 @@ security:
             form_login:
                 login_path: login
                 check_path: login
-                default_target_path: homeBlogpage
+                
 
             logout:
                 path:  logout
-                target: /blog
+                target: /
 
 
             # https://symfony.com/doc/current/security/form_login_setup.html

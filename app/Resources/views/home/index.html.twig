@@ -9,6 +9,11 @@
   <p id="user">Bonjour {{ app.user.username }} </p>
   {% endif %}
 
+<i class="fab fa-facebook-square"></i>
+<i class="fab fa-twitter-square"></i>
+
+
+
   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
   <a href="{{path('logout')}}">Déconnexion</a>

@@ -8,6 +8,8 @@ use AppBundle\Entity\Blog\Commentaires;
 use AppBundle\Entity\Blog\Categories;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
  * Post
@@ -62,7 +64,8 @@ class Post
 
     /**
      * @ORM\OneToMany(targetEntity="Commentaires", mappedBy="posts")
-     *
+     * @var Commentaires[]
+     * @Groups({"posts"})
      */
     private $commentaires;
 
@@ -85,7 +88,7 @@ class Post
    {
        $this->isActive = true;
         $this->commentaires = new ArrayCollection();
-        $this->categories = new ArrayCollection();  
+        $this->categories = new ArrayCollection();
        // may not be needed, see section on salt below
        // $this->salt = md5(uniqid('', true));
    }

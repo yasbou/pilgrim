@@ -19,11 +19,11 @@
       {% for post in posts %}
       <div class="article">
         <img src="{{asset('images/'~ post.image)}}" alt="">
-          <a href="{{path('show', { 'id': post.id })}}"><h2>{{ post.titre}}</h2></a>
+          <a href="{{path('commentaires', { 'id': post.id })}}"><h2>{{ post.titre}}</h2></a>
           <ul>
-            <li>PAR {{ post.auteur }} - </li>
-            <li> le {{ post.date | date('d-m-Y') }} - </li>
-            <li> {{post.categories.categorieNom}}</li>
+            <li> <i class="far fa-user"></i> {{ post.auteur }} - </li>
+            <li> <i class="far fa-calendar-alt"></i> {{ post.date | date('d-m-Y') }} - </li>
+            <li> <i class="fas fa-list"> </i> {{post.categories.categorieNom}}</li>
           </ul>
             <p>{{post.resume}}</p>
 

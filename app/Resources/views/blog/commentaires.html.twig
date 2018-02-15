@@ -20,40 +20,40 @@
 </div>
 
 
-
-
 <div class="commentaire">
+
+
 
   <h3><i class="fas fa-comments"> </i> Commentaire:</h3>
 
-<ul id = "commentaire">
-  <li id="auteur"></li>
-  <li id="date"></li>
-  <li id="text"></li>
-</ul>
 
 
 {% for com in post.commentaires %}
 
-  <ul>
-    <li>{{ com.auteurCom }} - </li>
-    <li>{{ com.dateCom| date('d/m/Y à H:i') }} - </li>
-    <li>{{ com.textCom }}</li>
+  <ul class="comment">
 
+      <li class='auteur'>{{ com.auteurCom }} - </li>
+      <li class='date'>{{ com.dateCom| date('d/m/Y à H:i') }} - </li>
+      <li class='texte'>{{ com.textCom }}</li>
+
+  </ul>
 {% endfor %}
-</ul>
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
+<div id="titre">
 
 <h3>Laisser un commentaire</h3>
+</div>
+
+
 
 <div id="form_com">
+      <input id="id" name="prodId" type="hidden" value="{{post.id}}">
+      <input type="textarea" name="commentaire" size="3" id="commentaire" placeholder="votre commentaire">
+    <button type="button" id="submit">Commenter</button>
 
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input id="poster" type="submit" value="poster" />
-{{ form_end(form) }}
+
 </div>
 
 {% else %}
@@ -64,9 +64,6 @@
 
 </div>
 
-
-
   {% endfor %}
 
-{% include 'blog/footer.html.twig' %}
 {% endblock %}

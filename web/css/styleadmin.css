@@ -6,7 +6,7 @@ body{
 
 
 .header{
-  background-color: #94D1E2;
+  background-color: #2b297d;
   color:white;
   font-family: "Mukta Mahee", sans-serif;
   text-align: center;
@@ -20,7 +20,7 @@ body{
   height: 400px;
   text-align: center;
   margin-top: 455px;
-  background-color: #22A1C4;
+  background-color: #2b297d;
   opacity: 0.8;
    text-align: center;
   font-size: 20px;
@@ -66,6 +66,6 @@ body{
 #logout{
 
   background-color: white;
-  color: #22A1C4;
+  color: #2b297d;
   padding: 20px;
 }

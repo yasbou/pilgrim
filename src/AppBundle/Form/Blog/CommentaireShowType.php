@@ -12,7 +12,8 @@ class CommentaireShowType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('textCom');
+        $builder->add('textCom', null, array('label' => false, 'attr' => array(
+        'placeholder' => 'écrivez votre commentaire')));
     }
 
     /**

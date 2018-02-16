@@ -1,0 +1,11 @@
+{% extends 'repertoire/baserep.html.twig' %}
+
+{% block body %}
+{{parent()}}
+
+{% for A in regions.agences %}
+{{dump(A)}}
+{% endfor %}
+
+
+{% endblock %}

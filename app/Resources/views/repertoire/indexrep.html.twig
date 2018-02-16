@@ -1,0 +1,35 @@
+{% extends 'repertoire/baserep.html.twig' %}
+
+{% block body %}
+{{parent()}}
+
+<main>
+
+  <h1>Le Repertoire</h1>
+  <p>Pilgrim.com vous facilite le depart</p>
+
+</main>
+
+<footer>
+<ul>
+
+  <li><a href="{{path('list_agence')}}"><i class="fas fa-align-justify"></i> <h2>les agences</h2> </a> </li>
+
+
+<li><a href="{{path('list_hotel')}}"><i class="fas fa-building"></i> <h2>les hotels</h2></a></li>
+
+
+</ul>
+
+</footer>
+
+<div class="after_footer">
+
+  <p>Toutes les Agences et Hotels rien que pour vous...</p>
+
+</div>
+
+
+
+
+{% endblock %}

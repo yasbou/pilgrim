@@ -1,0 +1,49 @@
+
+
+{% block body %}
+    <h1>Hotels list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Nombreetoile</th>
+                <th>Proximite</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hotel in hotels %}
+            <tr>
+                <td><a href="{{ path('admin_repertoire_hotel_show', { 'id': hotel.id }) }}">{{ hotel.id }}</a></td>
+                <td>{{ hotel.nom }}</td>
+                <td>{{ hotel.adresse }}</td>
+                <td>{{ hotel.nombreEtoile }}</td>
+                <td>{{ hotel.proximite }}</td>
+                <td>{{ hotel.description }}</td>
+                <td>{{ hotel.image }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_repertoire_hotel_show', { 'id': hotel.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_repertoire_hotel_edit', { 'id': hotel.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_repertoire_hotel_new') }}">Create a new hotel</a>
+        </li>
+    </ul>
+{% endblock %}

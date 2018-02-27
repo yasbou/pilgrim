@@ -5,6 +5,9 @@ var game = {
         console.log('jeu initialisé');
         // On écoute l'événement 'click' sur le bouton dont l'id est "submit"
         $('#submit').on('click', game.date);
+        $('#commentaire').keypress(function(e){
+    if( e.which == 13 )game.date();
+});
 
     },
 

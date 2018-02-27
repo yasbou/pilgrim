@@ -1,0 +1,74 @@
+{% extends 'repertoire/baserep.html.twig' %}
+
+{% block body %}
+{{parent()}}
+
+
+<div class="hotels">
+
+  <div class="hotel">
+
+      <img class="card-img-top" src="{{asset('images/'~ hotel.image)}}" alt="Card image cap">
+      <h1>{{hotel.nom}} <span id= "adresse">{{hotel.adresse}} {{hotel.ville}}</span></h1>
+
+      <hr>
+      <p>{{hotel.description}}</p>
+
+      <hr id="verticale">
+
+      <div class="proximite">
+        {% for i in 1.. hotel.nombreEtoile %}
+    <h6><i class="far fa-star"></i></h6>
+      {% endfor %}
+
+        <p>{{hotel.proximite}}</p>
+      </div>
+        </div>
+
+        <div class="commentaire">
+
+
+
+          <h3><i class="fas fa-comments"> </i> Commentaire:</h3>
+
+
+
+        {% for com in hotel.commentaires %}
+
+          <ul class="comment">
+
+              <li class='auteur'>{{ com.auteur }} - </li>
+              <li class='date'>{{ com.date| date('d/m/Y à H:i') }} - </li>
+              <li class='texte'>{{ com.commentaire }}</li>
+
+          </ul>
+        {% endfor %}
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+        <div id="titre">
+
+        <h3>Laisser un commentaire</h3>
+        </div>
+
+
+
+        <div id="form_com">
+              <input id="id" name="prodId" type="hidden" value="{{hotel.id}}">
+              <textarea name="commentaire"  rows="10" cols="50" id="commentaire" placeholder="votre commentaire"></textarea>
+            <button type="button" id="submit">Commenter</button>
+
+
+        </div>
+
+        {% else %}
+          <p>
+            Réagir sur cette hotel <a href="{{path('login')}}">connectez-vous</a> ou <a href="{{path('logup')}}">inscrivez-vous</a> en quelques click.
+          </p>
+        {% endif %}
+
+        </div>
+
+
+
+        {% endblock %}

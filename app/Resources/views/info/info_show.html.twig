@@ -1,0 +1,24 @@
+{% extends 'info/baseinfo.html.twig' %}
+
+{% block body %}
+{{parent()}}
+
+  <div class="info_show">
+
+
+  <h1 id= "titre_info">{{info.titre}}</h1>
+  <img src="{{asset('images/'~ info.image)}}" alt="">
+  {% if info.soustitre %}
+  <h2>{{info.soustitre}}</h2>
+  {% endif %}
+  <ul>
+    <li><i class="fas fa-hand-point-right"></i> {{info.listeA}}</li>
+    <li>{% if info.listeB %}<i class="fas fa-hand-point-right"></i>{% endif %}{{info.listeB}}</li>
+    <li>{% if info.listeC %}<i class="fas fa-hand-point-right"></i>{% endif %}{{info.listeC}}</li>
+    <li>{% if info.listeD %}<i class="fas fa-hand-point-right"></i>{% endif %}{{info.listeD}}</li>
+    <li>{% if info.listeE %}<i class="fas fa-hand-point-right"></i>{% endif %}{{info.listeE}}</li>
+  </ul>
+
+</div>
+
+{% endblock %}

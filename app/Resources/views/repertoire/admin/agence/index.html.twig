@@ -1,0 +1,55 @@
+
+
+{% block body %}
+    <h1>Agences list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Codepostale</th>
+                <th>Ville</th>
+                <th>Tel</th>
+                <th>Fax</th>
+                <th>Email</th>
+                <th>Logo</th>
+                <th>Lien</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for agence in agences %}
+            <tr>
+                <td><a href="{{ path('admin_repertoire_agence_show', { 'id': agence.id }) }}">{{ agence.id }}</a></td>
+                <td>{{ agence.nom }}</td>
+                <td>{{ agence.adresse }}</td>
+                <td>{{ agence.codePostale }}</td>
+                <td>{{ agence.ville }}</td>
+                <td>{{ agence.tel }}</td>
+                <td>{{ agence.fax }}</td>
+                <td>{{ agence.email }}</td>
+                <td>{{ agence.logo }}</td>
+                <td>{{ agence.lien }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_repertoire_agence_show', { 'id': agence.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_repertoire_agence_edit', { 'id': agence.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_repertoire_agence_new') }}">Create a new agence</a>
+        </li>
+    </ul>
+{% endblock %}

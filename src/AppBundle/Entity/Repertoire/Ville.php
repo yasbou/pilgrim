@@ -36,7 +36,6 @@ class Ville
      private $hotels;
 
 
-
     /**
      * Get id
      *
@@ -71,6 +70,10 @@ class Ville
         return $this->nomVille;
     }
 
+    public function __toString()
+    {
+      return $this->getNomVille();
+    }
     /**
      * Set the value of Id
      *

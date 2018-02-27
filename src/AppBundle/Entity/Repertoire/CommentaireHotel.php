@@ -29,9 +29,9 @@ class CommentaireHotel
     private $auteur;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="date", type="text")
      */
     private $date;
 

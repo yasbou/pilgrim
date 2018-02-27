@@ -68,6 +68,13 @@ class Hotel
      */
      private $commentaires;
 
+     /**
+      * @var string
+      *
+      * @ORM\Column(name="image", type="string", length=255)
+      */
+     private $image;
+
 
     /**
      * Get id
@@ -258,6 +265,31 @@ class Hotel
     public function setCommentaires($commentaires)
     {
         $this->commentaires = $commentaires;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of Image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of Image
+     *
+     * @param string image
+     *
+     * @return self
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
 
         return $this;
     }

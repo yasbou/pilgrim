@@ -34,65 +34,67 @@ class HomeRepertoireController extends Controller
 
 
   /**
-   * @Route("/repertoire/list/Agence/", name="list_agence")
+   * @Route("/repertoire/list/Agence/{page}", requirements={"page" = "\d+"}, name="list_agence")
    */
-  public function listAgenceAction(Request $request){
+  public function listAgenceAction(Request $request, $page){
+
+    $nbArticlesParPage = $this->container->getParameter('front_nb_agences_par_page');
+
+       $em = $this->getDoctrine()->getManager();
+
+       $agences = $em->getRepository(Agence::class)
+           ->findAllPagineEtTrie($page, $nbArticlesParPage);
+
+       $pagination = array(
+           'page' => $page,
+           'nbPages' => ceil(count($agences) / $nbArticlesParPage),
+           'nomRoute' => 'front_articles_index',
+           'paramsRoute' => array()
+       );
+
     $region = $this->getDoctrine()->getRepository(Region::class)->findAll();
     $ville= $this->getDoctrine()->getRepository(Ville::class)->findAll();
+
 
     return $this->render('repertoire/list_agence.html.twig', [
     'region' =>  $region,
     'ville' => $ville,
+    'agences'=> $agences,
+    'pagination' => $pagination
     ]);
   }
 
 
   /**
-   * @Route("/repertoire/list/Hotel/", name="list_hotel")
+   * @Route("/repertoire/list/Hotel/{page}", requirements={"page" = "\d+"}, name="list_hotel")
    */
-  public function listHotelAction(Request $request){
+  public function listHotelAction(Request $request, $page){
+
+    $nbArticlesParPage = $this->container->getParameter('front_nb_hotels_par_page');
+
+       $em = $this->getDoctrine()->getManager();
+
+       $hotels = $em->getRepository(Hotel::class)
+           ->findAllPagineEtTrie($page, $nbArticlesParPage);
+
+       $pagination = array(
+           'page' => $page,
+           'nbPages' => ceil(count($hotels) / $nbArticlesParPage),
+           'nomRoute' => 'front_articles_index',
+           'paramsRoute' => array()
+       );
+
+
     $region = $this->getDoctrine()->getRepository(Region::class)->findAll();
     $ville= $this->getDoctrine()->getRepository(Ville::class)->findAll();
-
     return $this->render('repertoire/list_hotel.html.twig', [
     'region' =>  $region,
     'ville' => $ville,
-    ]);
-  }
-
-  /**
-   * @Route("/repertoire/{id}/agence//", name="list_by_region")
-   */
-  public function listRegionAction(Request $request, Region $regions, $id){
-    $region = $this->getDoctrine()->getRepository(Region::class)->findAll();
-    $ville= $this->getDoctrine()->getRepository(Ville::class)->findAll();
-    $agence= $this->getDoctrine()->getRepository(Agence::class)->findAll();
-
-
-    return $this->render('repertoire/list_by_region.html.twig', [
-    'region' =>  $region,
-    'ville' => $ville,
-    'agence' => $agence,
-    'regions'=> $regions
+    'hotels' => $hotels,
+    'pagination' => $pagination
     ]);
   }
 
 
-  /**
-   * @Route("/repertoire/ville/{id}/", name="list_by_ville")
-   */
-  public function listVilleAction(Request $request, Ville $villes,  $id){
-    $region = $this->getDoctrine()->getRepository(Region::class)->findAll();
-    $ville= $this->getDoctrine()->getRepository(Ville::class)->findAll();
-    $hotel= $this->getDoctrine()->getRepository(Hotel::class)->findAll();
-
-
-    return $this->render('repertoire/list_by_ville.html.twig', [
-    'region' =>  $region,
-    'ville' => $ville,
-    'hotel' => $hotel,
-    'villes'=> $villes,
-    ]);
-  }
 
 }

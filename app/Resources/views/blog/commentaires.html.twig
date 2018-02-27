@@ -50,7 +50,7 @@
 
 <div id="form_com">
       <input id="id" name="prodId" type="hidden" value="{{post.id}}">
-      <input type="textarea" name="commentaire" size="3" id="commentaire" placeholder="votre commentaire">
+      <textarea name="commentaire"  rows="10" cols="50" id="commentaire" placeholder="votre commentaire"></textarea>
     <button type="button" id="submit">Commenter</button>
 
 
@@ -65,5 +65,5 @@
 </div>
 
   {% endfor %}
-
+{% include 'blog/footer.html.twig' %}
 {% endblock %}

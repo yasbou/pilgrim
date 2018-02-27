@@ -1,0 +1,136 @@
+.hotels{
+  width: 800px;
+  margin: 0 auto;
+}
+
+.hotel{
+
+width: 800px;
+height: 200px;
+color: white;
+background-color: #2b297d;
+
+}
+
+.hotel h1{
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase
+}
+
+.hotel p{
+
+}
+
+.hotel img{
+  width: 150px;
+  height: 200px;
+  position: absolute;
+  float: left;
+}
+
+.hotel h1{
+  position: relative;
+  padding-left: 160px;
+}
+#adresse{
+  font-size: 9px;
+  font-weight: initial;
+
+}
+
+.hotel p{
+  position: relative;
+  padding-left: 160px;
+}
+
+hr{
+  width: 200px;
+  background-color: white;
+text-align: center;
+}
+
+
+  .proximite{
+
+    width: 200px;
+    float: right;
+    margin-top: -150px;
+    text-align: center;
+  }
+
+  .proximite h6{
+ display: inline;
+}
+
+.proximite p{
+  width: 300px;
+  margin-left: -150px
+}
+
+#verticale{
+  width: 1px;
+  height: 100px;
+  margin-left: 600px;
+  margin-top: -60px
+}
+
+.details{
+  background-color: white;
+  color: #2b297d;
+  margin-top: 60px;
+  border-radius: 20px
+}
+
+#titre{
+  color:#2b297d;
+}
+
+.commentaire{
+  color: black;
+  font-family: 'Mukta Mahee', sans-serif;
+  width: 800px;
+  margin: 30px auto;
+}
+
+.commentaire h3{
+  margin-top: 20px;
+}
+
+.commentaire ul{
+
+  background-color :#E8E8F1;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 30px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.commentaire li{
+  display: inline-block;
+}
+
+#form_com textarea {
+  color: white;
+  margin-top: 20px;
+  width: 500px;
+  height: 100px;
+  background-color :#2b297d;
+  border: 0px;
+
+
+}
+
+
+#form_com button{
+
+  background: #2b297d;
+  border: 0;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 30px;
+  color: white;
+}

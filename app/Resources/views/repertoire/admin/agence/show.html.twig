@@ -1,0 +1,64 @@
+
+
+{% block body %}
+    <h1>Agence</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ agence.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ agence.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ agence.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Codepostale</th>
+                <td>{{ agence.codePostale }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ agence.ville }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ agence.tel }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ agence.fax }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ agence.email }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ agence.logo }}</td>
+            </tr>
+            <tr>
+                <th>Lien</th>
+                <td>{{ agence.lien }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_repertoire_agence_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_repertoire_agence_edit', { 'id': agence.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

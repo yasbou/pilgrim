@@ -5,5 +5,71 @@
 
 
 
+<div class="hotels">
+{% for H in hotels %}
+  <div class="hotel">
+
+      <img class="card-img-top" src="{{asset('images/'~ H.image)}}" alt="Card image cap">
+      <h1>{{H.nom}} <span id= "adresse">{{H.adresse}} {{H.ville}}</span></h1>
+
+      <hr>
+      <p>{{H.description}}</p>
+
+      <hr id="verticale">
+
+      <div class="proximite">
+        {% for i in 1.. H.nombreEtoile %}
+    <h6><i class="far fa-star"></i></h6>
+{% endfor %}
+
+        <p>{{H.proximite}}</p>
+        <a href="{{path('hotel_details', {'id': H.id})}}" class="btn details ">Voir les commentaires</a>
+      </div>
+
+
+  </div>
+  {% endfor %}
+  <div class="footer">
+
+
+  {% if pagination.nbPages > 0 %}
+      <ul class="pagination">
+          {% if pagination.page > 1 %}
+
+          <li class="page-item">
+            <a class="page-link" href="{{ path("list_hotel", ({'page': 1})) }}"> << </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="{{ path("list_hotel", ({'page': pagination.page-1})) }}"> Previous </a>
+              </li>
+          {% endif %}
+
+          {# Affichage de toutes les pages entre p-4 et p+4 sauf si < 1 ou > nbPages #}
+          {% for p in range(max(pagination.page-4, 1), min(pagination.page+4, pagination.nbPages)) %}
+              <li class="page-item {% if p == pagination.page %}active{% endif %}" >
+                  <a class="page-link" href="{{ path('list_hotel', ({'page': p})) }}">{{ p }}</a>
+              </li>
+          {% endfor %}
+
+          {% if pagination.page < pagination.nbPages %}
+              <li class="page-item" >
+                  <a class="page-link" href="{{path('list_hotel', ({'page': pagination.page+1})) }}">
+                      Next
+                  </a>
+              </li>
+              <li  class="page-item">
+                  <a class="page-link" href="{{ path('list_hotel', ({'page': pagination.nbPages})) }}">
+                      >></a>
+              </li>
+          {% endif %}
+      </ul>
+  {% endif %}
+
+  </div>
+
+
+
+</div>
+
 
 {% endblock %}

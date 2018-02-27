@@ -5,4 +5,70 @@
 
 
 
+<div class="agences">
+
+  <h1>Toute les agences</h1>
+
+
+{% for A in agences %}
+
+<div class="card agence" style="width: 18rem;">
+  <img class="card-img-top" src="{{asset('images/'~ A.logo)}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{A.nom}}</h5>
+    <p class="card-text"> {{A.adresse}} {{A.codePostale}} {{A.ville}}</p>
+    <hr>
+    <h6>tel: {{A.tel}}</h6>
+    <h6>fax: {{A.fax}}</h6>
+    <h6>email: {{A.email}}</h6>
+    <hr>
+    <a href="{{A.lien}}" class="btn ">En savoir plus</a>
+  </div>
+</div>
+
+{% endfor %}
+
+
+
+
+<div class="footer">
+
+
+{% if pagination.nbPages > 0 %}
+    <ul class="pagination">
+        {% if pagination.page > 1 %}
+
+        <li class="page-item">
+          <a class="page-link" href="{{ path("list_agence", ({'page': 1})) }}"> << </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="{{ path("list_agence", ({'page': pagination.page-1})) }}"> Previous </a>
+            </li>
+        {% endif %}
+
+        {# Affichage de toutes les pages entre p-4 et p+4 sauf si < 1 ou > nbPages #}
+        {% for p in range(max(pagination.page-4, 1), min(pagination.page+4, pagination.nbPages)) %}
+            <li class="page-item {% if p == pagination.page %}active{% endif %}" >
+                <a class="page-link" href="{{ path('list_agence', ({'page': p})) }}">{{ p }}</a>
+            </li>
+        {% endfor %}
+
+        {% if pagination.page < pagination.nbPages %}
+            <li class="page-item" >
+                <a class="page-link" href="{{path('list_agence', ({'page': pagination.page+1})) }}">
+                    Next
+                </a>
+            </li>
+            <li  class="page-item">
+                <a class="page-link" href="{{ path('list_agence', ({'page': pagination.nbPages})) }}">
+                    >></a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+</div>
+
+</div>
+
 {% endblock %}

@@ -1,0 +1,74 @@
+.agences{
+  width: 1000px;
+  text-align: center;
+  margin: 30px auto;
+  background-color: #2b297d;
+  opacity: 0.7;
+  padding: 20px;
+}
+
+
+.agence{
+  display: inline-block;
+  font-size: 10px;
+  margin: 10px;
+}
+
+.agences:hover{
+  opacity: 1;
+}
+
+.card-text{
+  height: 30px;
+}
+
+.agence h6{
+  font-size: 15px;
+}
+
+.btn{
+  background-color: #2b297d;
+  color: white;
+}
+
+.footer{
+  margin: 20px auto;
+  text-align: center;
+  display: inline-block;
+}
+
+.reservations{
+    background-color: #BF3E26;
+    font-size: 13pt;
+    margin-bottom: 50px;
+}
+
+.reservations a{
+    color:#98fb98;
+}
+.reservations a:hover ,.reservations a:focus , .reservations a:visited{
+    color:#98fb98;
+}
+.pagination > li > a,
+.pagination > li > span{
+    color: #BF3E26;
+
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus{
+    background-color: #98fb98;
+    color:#BF3E26;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus{
+    background-color: #1C8C42;
+    color: #ffffff;
+    border: 1px solid #dddddd;
+}

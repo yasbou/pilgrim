@@ -1,0 +1,91 @@
+body{
+  /*background-color: #2b297d;*/
+  /*background-image: url('../images/masjidil_haram.jpg');*/
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: 'Mukta Mahee', sans-serif;
+}
+
+header{
+  background-color: #2b297d;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+body h1{
+  color: white;
+  text-align: center;
+  background-color: #2b297d;
+  /*opacity: 0.8;*/
+  margin-top: 50px;
+  padding: 20px;
+}
+
+main{
+
+  color: #2b297d;
+  margin: 20px auto;
+  width: 1000px;
+
+}
+
+/*
+.card-deck{
+  width: 330px;
+  margin: 20px auto;
+  display: inline-block;
+}*/
+
+
+.card-deck{
+  width: 300px;
+  display: inline-block;
+  margin: 25px auto
+
+}
+
+
+
+.card{
+  opacity: 0.8;
+  text-align: center;
+
+}
+
+.card:hover{
+  opacity: 1;
+
+}
+
+.card-title{
+  margin-bottom: 20px;
+}
+.card-text{
+  color: white;
+  background-color: #2b297d;
+  padding: 10px;
+  text-decoration: none;
+
+}
+
+.card-text:active, .card-text:focus{
+  color: white;
+  outline-style:none;
+}
+
+.info_show{
+  width: 800px;
+  margin: 20px auto;
+}
+
+.info_show img{
+  width: 800px;
+}
+
+.info_show li{
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}

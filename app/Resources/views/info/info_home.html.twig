@@ -1,0 +1,24 @@
+{% extends 'info/baseinfo.html.twig' %}
+
+{% block body %}
+{{parent()}}
+
+
+  <h1>Toute les infos incontournables pour préparer au mieux votre départ.</h1>
+
+  <main>
+
+    {% for I in infos %}
+    <div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="{{asset('images/'~ I.image)}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{I.titre}}</h5>
+      <a class="card-text" href="{{path('show_info', {'id': I.id})}}">En savoir plus</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

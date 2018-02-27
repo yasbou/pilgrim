@@ -1,0 +1,52 @@
+
+
+{% block body %}
+    <h1>Hotel</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ hotel.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ hotel.nom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ hotel.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Nombreetoile</th>
+                <td>{{ hotel.nombreEtoile }}</td>
+            </tr>
+            <tr>
+                <th>Proximite</th>
+                <td>{{ hotel.proximite }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ hotel.description }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ hotel.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_repertoire_hotel_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin_repertoire_hotel_edit', { 'id': hotel.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

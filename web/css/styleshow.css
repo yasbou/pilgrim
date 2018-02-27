@@ -70,7 +70,7 @@
   display: inline-block;
 }
 
-#form_com input {
+#form_com textarea {
   margin-top: 20px;
   width: 500px;
   height: 100px;

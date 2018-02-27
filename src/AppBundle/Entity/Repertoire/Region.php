@@ -82,6 +82,11 @@ class Region
         return $this->nom;
     }
 
+    public function __toString()
+    {
+      return $this->getNom();
+    }
+
     /**
      * Set the value of Id
      *

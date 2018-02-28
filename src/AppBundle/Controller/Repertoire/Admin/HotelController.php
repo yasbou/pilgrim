@@ -6,6 +6,8 @@ use AppBundle\Entity\Repertoire\Hotel;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\File;
+
 
 /**
  * Hotel controller.
@@ -44,6 +46,12 @@ class HotelController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+          $pictureName= $hotel->getImage();
+          $filename= md5(uniqid()).'.'.$pictureName->guessExtension();
+          $pictureName->move($this->getParameter('upload_directory'), $filename);
+          $hotel->setImage($filename);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($hotel);
             $em->flush();
@@ -81,14 +89,28 @@ class HotelController extends Controller
      */
     public function editAction(Request $request, Hotel $hotel)
     {
+      $currentLogo= $hotel->getImage();
+        if (!empty($hotel->getImage())) {
+            $hotel->setImage(new File($this->getParameter('upload_directory').'/'.$hotel->getImage()));
+        }
+
         $deleteForm = $this->createDeleteForm($hotel);
         $editForm = $this->createForm('AppBundle\Form\Repertoire\HotelType', $hotel);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+
+          $logoname= $hotel->getImage();
+          if ($logoname) {
+            $filename= md5(uniqid()).'.'.$logoname->guessExtension();
+            $logoname->move($this->getParameter('upload_directory'), $filename);
+            $hotel->setImage($filename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_repertoire_hotel_edit', array('id' => $hotel->getId()));
+            return $this->redirectToRoute('admin_repertoire_hotel_show', array('id' => $hotel->getId()));
         }
 
         return $this->render('repertoire/admin/hotel/edit.html.twig', array(

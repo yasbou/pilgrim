@@ -1,16 +1,19 @@
-
+{% extends 'admin/baseadmin.html.twig' %}
 
 {% block body %}
+<div class="bodyadmin">
+{{ parent() }}
     <h1>Agence creation</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Créer" class="btn btn-success btn-sm" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('admin_repertoire_agence_index') }}">Back to the list</a>
+            <a class="btn btn-warning btn-sm" href="{{ path('admin_repertoire_agence_index') }}">Back to the list</a>
         </li>
     </ul>
+    </div>
 {% endblock %}

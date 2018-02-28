@@ -1,8 +1,10 @@
-
+{% extends 'admin/baseadmin.html.twig' %}
 
 {% block body %}
+{{ parent() }}
+<div class="bodyadmin">
     <h1>Users list</h1>
-
+<table class="table table-hover">
     <table>
         <thead>
             <tr>
@@ -25,10 +27,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_user_show', { 'id': user.id }) }}">show</a>
+                            <a class="btn btn-primary btn-sm" href="{{ path('admin_user_show', { 'id': user.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_user_edit', { 'id': user.id }) }}">edit</a>
+                            <a class="btn btn-warning btn-sm" href="{{ path('admin_user_edit', { 'id': user.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -39,7 +41,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_user_new') }}">Create a new user</a>
+            <a class="btn btn-success" href="{{ path('admin_user_new') }}">Create a new user</a>
         </li>
     </ul>
+    </div>
 {% endblock %}

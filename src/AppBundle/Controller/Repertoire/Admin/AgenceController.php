@@ -5,7 +5,9 @@ namespace AppBundle\Controller\Repertoire\Admin;
 use AppBundle\Entity\Repertoire\Agence;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Agence controller.
@@ -44,6 +46,14 @@ class AgenceController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $pictureName= $agence->getLogo();
+            $filename= md5(uniqid()).'.'.$pictureName->guessExtension();
+            $pictureName->move($this->getParameter('upload_directory'), $filename);
+            $agence->setLogo($filename);
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($agence);
             $em->flush();
@@ -81,14 +91,32 @@ class AgenceController extends Controller
      */
     public function editAction(Request $request, Agence $agence)
     {
+      $currentLogo= $agence->getLogo();
+        if (!empty($agence->getLogo())) {
+            $agence->setLogo(new File($this->getParameter('upload_directory').'/'.$agence->getLogo()));
+        }
         $deleteForm = $this->createDeleteForm($agence);
         $editForm = $this->createForm('AppBundle\Form\Repertoire\AgenceType', $agence);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+          $logoname= $agence->getLogo();
+          if ($logoname) {
+            $filename= md5(uniqid()).'.'.$logoname->guessExtension();
+            $logoname->move($this->getParameter('upload_directory'), $filename);
+            $agence->setLogo($filename);
+            }
+
+            else {
+              $agence->setLogo($currentLogo);
+            }
+
+
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_repertoire_agence_edit', array('id' => $agence->getId()));
+
+            return $this->redirectToRoute('admin_repertoire_agence_show', array('id' => $agence->getId()));
         }
 
         return $this->render('repertoire/admin/agence/edit.html.twig', array(

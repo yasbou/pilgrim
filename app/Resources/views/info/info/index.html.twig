@@ -1,0 +1,56 @@
+{% extends 'admin/baseadmin.html.twig' %}
+{% block body %}
+{{ parent() }}
+
+<div class="bodyadmin">
+    <h1>Infos list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Soustitre</th>
+                <th>Listea</th>
+                <th>Listeb</th>
+                <th>Listec</th>
+                <th>Listed</th>
+                <th>Listee</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info in infos %}
+            <tr>
+                <td><a href="{{ path('admin_info_info_show', { 'id': info.id }) }}">{{ info.id }}</a></td>
+                <td>{{ info.titre }}</td>
+                <td>{{ info.soustitre }}</td>
+                <td>{{ info.listeA }}</td>
+                <td>{{ info.listeB }}</td>
+                <td>{{ info.listeC }}</td>
+                <td>{{ info.listeD }}</td>
+                <td>{{ info.listeE }}</td>
+                <td>{{ info.image }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="btn btn-primary btn-sm" href="{{ path('admin_info_info_show', { 'id': info.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-warning btn-sm" href="{{ path('admin_info_info_edit', { 'id': info.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-success" href=" {{ path('admin_info_info_new') }}">Create a new info</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

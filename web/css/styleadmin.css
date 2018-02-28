@@ -1,10 +1,23 @@
 body{
-  background: url('../images/desk.jpg');
+  /*background: url('../images/desk.jpg');*/
   background-repeat: no-repeat;
-  opacity: 0.6;
+
+
 }
 
+.bodyadmin{
+  opacity: 1;
+  width: 1000px;
+  margin: 0 auto;
+}
 
+.bodyadmin table{
+  border: 1px solid gray;
+}
+
+img{
+  width: 100%;
+}
 .header{
   background-color: #2b297d;
   color:white;
@@ -17,16 +30,17 @@ body{
 
 .nav{
 
-  height: 400px;
+
   text-align: center;
-  margin-top: 455px;
+  margin-top: -45px;
   background-color: #2b297d;
   opacity: 0.8;
-   text-align: center;
+  text-align: center;
   font-size: 20px;
   text-transform: uppercase;
   color:white;
   font-family: "Mukta Mahee", sans-serif;
+  padding: 20px;
 
 }
 
@@ -58,14 +72,20 @@ body{
   font-weight: bold;
 }
 
-.fa-comment-alt, .fa-pencil-alt, .fa-users, .fa-list{
+.fa-comment-alt, .fa-pencil-alt, .fa-users, .fa-list, .fa-align-justify, .fa-building, .fa-clipboard{
 
   font-size: 100px
 }
 
 #logout{
-
+  width: 300px;
+  height: 100px;
   background-color: white;
   color: #2b297d;
   padding: 20px;
+
+}
+
+.btn{
+  margin-top: 20px;
 }

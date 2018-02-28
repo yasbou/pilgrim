@@ -1,0 +1,64 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+
+<div class="bodyadmin">
+    <h1>Info</h1>
+
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ info.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ info.titre }}</td>
+            </tr>
+            <tr>
+                <th>Soustitre</th>
+                <td>{{ info.soustitre }}</td>
+            </tr>
+            <tr>
+                <th>Listea</th>
+                <td>{{ info.listeA }}</td>
+            </tr>
+            <tr>
+                <th>Listeb</th>
+                <td>{{ info.listeB }}</td>
+            </tr>
+            <tr>
+                <th>Listec</th>
+                <td>{{ info.listeC }}</td>
+            </tr>
+            <tr>
+                <th>Listed</th>
+                <td>{{ info.listeD }}</td>
+            </tr>
+            <tr>
+                <th>Listee</th>
+                <td>{{ info.listeE }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ info.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-primary btn-sm" href="{{ path('admin_info_info_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a class="btn btn-warning btn-sm" href="{{ path('admin_info_info_edit', { 'id': info.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer" class="btn btn-danger btn-sm" >
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+<div class="bodyadmin">
+
+    <h1>Commentairehotels list</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Auteur</th>
+                <th>Date</th>
+                <th>Commentaire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commentaireHotel in commentaireHotels %}
+            <tr>
+                <td><a href="{{ path('admin_repertoire_commentairehotel_show', { 'id': commentaireHotel.id }) }}">{{ commentaireHotel.id }}</a></td>
+                <td>{{ commentaireHotel.auteur }}</td>
+                <td>{{ commentaireHotel.date }}</td>
+                <td>{{ commentaireHotel.commentaire }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="btn btn-primary btn-sm" href="{{ path('admin_repertoire_commentairehotel_show', { 'id': commentaireHotel.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a class="btn btn-warning btn-sm" href="{{ path('admin_repertoire_commentairehotel_edit', { 'id': commentaireHotel.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-success" href="{{ path('admin_repertoire_commentairehotel_new') }}">Create a new commentaireHotel</a>
+        </li>
+    </ul>
+    </div>
+{% endblock %}

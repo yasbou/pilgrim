@@ -1,9 +1,11 @@
-
+{% extends 'admin/baseadmin.html.twig' %}
 
 {% block body %}
+{{ parent() }}
+<div class="bodyadmin">
     <h1>Agences list</h1>
 
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -35,10 +37,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_repertoire_agence_show', { 'id': agence.id }) }}">show</a>
+                            <a class="btn btn-primary btn-sm" href="{{ path('admin_repertoire_agence_show', { 'id': agence.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_repertoire_agence_edit', { 'id': agence.id }) }}">edit</a>
+                            <a class="btn btn-warning btn-sm" href="{{ path('admin_repertoire_agence_edit', { 'id': agence.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -49,7 +51,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_repertoire_agence_new') }}">Create a new agence</a>
+            <a class="btn btn-success" href="{{ path('admin_repertoire_agence_new') }}">Create a new agence</a>
         </li>
     </ul>
+    </div>
 {% endblock %}

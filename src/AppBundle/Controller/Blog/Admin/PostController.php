@@ -5,7 +5,9 @@ namespace AppBundle\Controller\Blog\Admin;
 use AppBundle\Entity\Blog\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * Post controller.
@@ -44,6 +46,13 @@ class PostController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+          $pictureName= $post->getImage();
+          $filename= md5(uniqid()).'.'.$pictureName->guessExtension();
+          $pictureName->move($this->getParameter('upload_directory'), $filename);
+          $post->setImage($filename);
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
@@ -81,14 +90,28 @@ class PostController extends Controller
      */
     public function editAction(Request $request, Post $post)
     {
+      $currentLogo= $post->getImage();
+        if (!empty($post->getImage())) {
+            $post->setImage(new File($this->getParameter('upload_directory').'/'.$post->getImage()));
+        }
+
         $deleteForm = $this->createDeleteForm($post);
         $editForm = $this->createForm('AppBundle\Form\Blog\PostType', $post);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+          $logoname= $post->getImage();
+          if ($logoname) {
+            $filename= md5(uniqid()).'.'.$logoname->guessExtension();
+            $logoname->move($this->getParameter('upload_directory'), $filename);
+            $post->setImage($filename);
+            }
+
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('blog_post_edit', array('id' => $post->getId()));
+            return $this->redirectToRoute('blog_post_show', array('id' => $post->getId()));
         }
 
         return $this->render('blog/post/edit.html.twig', array(

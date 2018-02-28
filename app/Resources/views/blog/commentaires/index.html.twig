@@ -1,8 +1,11 @@
+{% extends 'admin/baseadmin.html.twig' %}
 
 {% block body %}
+{{ parent() }}
+  <div class="bodyadmin">
     <h1>Commentaires list</h1>
 
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -22,10 +25,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('blog_commentaires_show', { 'id': commentaire.id }) }}">show</a>
+                            <a class="btn btn-primary btn-sm" href="{{ path('blog_commentaires_show', { 'id': commentaire.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('blog_commentaires_edit', { 'id': commentaire.id }) }}">edit</a>
+                            <a class="btn btn-warning btn-sm" href="{{ path('blog_commentaires_edit', { 'id': commentaire.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -36,7 +39,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('blog_commentaires_new') }}">Create a new commentaire</a>
+            <a class="btn btn-success" href="{{ path('blog_commentaires_new') }}">Create a new commentaire</a>
         </li>
     </ul>
+    </div>
 {% endblock %}

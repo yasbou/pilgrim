@@ -1,10 +1,14 @@
 {% extends 'admin/baseadmin.html.twig' %}
+
 {% block body %}
+{{ parent() }}
+
 
 <div class="header">
 
     <p>bienvenu sur votre page d'admin</p>
 </div>
+<img src="{{asset('images/desk.jpg')}}" alt="">
 
 
 
@@ -15,6 +19,12 @@
     <li><a href="{{path('blog_categories_index')}}"> <i class="fas fa-list"></i> <span>Les catégories</span> </a> </li>
     <li><a href="{{path('blog_commentaires_index')}}"> <i class="fas fa-comment-alt"></i> <span> Les commentaires</span> </a></li>
     <li><a href="{{path('admin_user_index')}}"> <i class="fas fa-users"></i> <span>Les Users</span> </a></li>
+    <li><a href="{{path('admin_repertoire_agence_index')}}"><i class="fas fa-align-justify"></i> <span>les agences</span> </a> </li>
+    <li><a href="{{path('admin_repertoire_hotel_index')}}"><i class="fas fa-building"></i> <span>les hotels</span></a></li>
+    <li><a href="{{path('admin_info_info_index')}}"><i class="far fa-clipboard"></i> <span>les infos incontournables</span></a></li>
+    <li><a href="{{path('admin_repertoire_commentairehotel_index')}}"> <i class="fas fa-comment-alt"></i> <span> Les commentaires hotels</span> </a></li>
+
+
   </ul>
 
   <a id="logout" href= "{{path('logout')}}"> Se Déconnecter</a>

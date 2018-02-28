@@ -1,9 +1,11 @@
-
+{% extends 'admin/baseadmin.html.twig' %}
 
 {% block body %}
+{{ parent() }}
+<div class="bodyadmin">
     <h1>Hotels list</h1>
 
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -29,10 +31,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin_repertoire_hotel_show', { 'id': hotel.id }) }}">show</a>
+                            <a class="btn btn-primary btn-sm" href="{{ path('admin_repertoire_hotel_show', { 'id': hotel.id }) }}">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('admin_repertoire_hotel_edit', { 'id': hotel.id }) }}">edit</a>
+                            <a class="btn btn-warning btn-sm" href="{{ path('admin_repertoire_hotel_edit', { 'id': hotel.id }) }}">edit</a>
                         </li>
                     </ul>
                 </td>
@@ -43,7 +45,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_repertoire_hotel_new') }}">Create a new hotel</a>
+            <a class="btn btn-success" href="{{ path('admin_repertoire_hotel_new') }}">Create a new hotel</a>
         </li>
     </ul>
+    </div>
 {% endblock %}

@@ -11,7 +11,7 @@
     {% for I in infos %}
     <div class="card-deck">
   <div class="card">
-    <img class="card-img-top" src="{{asset('images/'~ I.image)}}" alt="Card image cap">
+    <img class="card-img-top" src="{{asset('uploads/'~ I.image)}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{I.titre}}</h5>
       <a class="card-text" href="{{path('show_info', {'id': I.id})}}">En savoir plus</a>

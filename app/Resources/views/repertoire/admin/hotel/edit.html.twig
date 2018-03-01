@@ -2,6 +2,7 @@
 
 {% block body %}
 {{ parent() }}
+{% include 'admin/header.html.twig' %}
 <div class="bodyadmin">
     <h1>Hotel edit</h1>
 
@@ -20,6 +21,6 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
-        
+
     </div>
 {% endblock %}

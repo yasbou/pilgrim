@@ -2,6 +2,7 @@
 
 {% block body %}
 {{ parent() }}
+{% include 'admin/header.html.twig' %}
 <div class="bodyadmin">
     <h1>Agence edit</h1>
 
@@ -19,6 +20,6 @@
                 <input class="btn btn-danger"  type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
-    </ul>      
+    </ul>
     </div>
 {% endblock %}

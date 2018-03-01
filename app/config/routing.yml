@@ -4,3 +4,7 @@ app:
 
 logout:
     path: /logout
+
+myapplication_contact:
+    path:     /contact
+    defaults: { _controller: AppBundle:Mail:simplemail }

@@ -6,6 +6,7 @@
 
         <title>{% block title %}Notre Blog{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/styleHomeBlog.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styleshow.css') }}">
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
@@ -16,34 +17,53 @@
         {% block body %}
 
 
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <div class="header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{path('homepage')}}">PILGRIM <span class="sr-only">(current)</span>.com</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{path('homeBlogpage', {'page':1})}}">Accueil</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Catégories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  {% for C in categories %}
 
-          <p id="user">Bonjour {{ app.user.username }} </p>
+        				<a class="dropdown-item" href="{{path('categories', {'id':C.id})}}">{{ C.categorieNom }}</a>
+        				{% endfor %}
 
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="{{path("myapplication_contact")}}">Contact</a>
+              </li>
+              <li class="nav-item">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <p class="nav-link disabled">Bonjour {{ app.user.username }} </p>
+                {% endif %}
+                </li>
+                <li class="nav-item">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="nav-link disabled" href="{{path('logout')}}">Déconnexion</a>
+                {% else %}
+                <a class="nav-link disabled" href="{{path('login')}}">Connexion</a>
+                {% endif %}
 
-          {% endif %}
-
-
-          <ul>
-            <a href="{{path('homepage')}}"><li>ACCUEIL</li></a>
-            <a href="{{path('categories')}}"><li>CATÉGORIES</li></a>
-            <a href="{{path('apropos')}}"><li>A PROPOS</li></a>
-            <a href="{{path('contact')}}"><li>CONTACT</li></a>
-          </ul>
-          {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
-          <a class='log' href="{{path('logout')}}">Déconnexion</a>
-
-          {% else %}
-
-          <a class="log" href="{{path('login')}}">Connexion</a>
-
-          {% endif %}
-
-        </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
 
         <h1><span>LE BLOG</span> DE NAIMA</h1>
 
@@ -83,6 +103,7 @@
           js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.12';
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         {% endblock %}
     </body>

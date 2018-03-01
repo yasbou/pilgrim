@@ -183,3 +183,9 @@ span{
 	border-top: 1px dashed grey;
 
 }
+
+
+.pagination{
+  width: 500px;
+  margin: 20px auto;
+}

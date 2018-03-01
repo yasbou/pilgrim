@@ -29,18 +29,30 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class HomeBlogController extends Controller
 {
     /**
-     * @Route("/blog", name="homeBlogpage")
+     * @Route("/blog/list_article/{page}", name="homeBlogpage")
      */
-    public function BlogHomeAction()
+    public function BlogHomeAction(Request $request, $page)
     {
-        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+      $nbArticlesParPage = $this->container->getParameter('front_nb_post_par_page');
+        $em = $this->getDoctrine()->getManager();
+
+        $posts = $em->getRepository(Post::class)
+            ->findAllPagineEtTrie($page, $nbArticlesParPage);
         $categories= $this->getDoctrine()->getRepository(Categories::class)->findAll();
+
+        $pagination = array(
+            'page' => $page,
+            'nbPages' => ceil(count($posts) / $nbArticlesParPage),
+            'nomRoute' => 'front_articles_index',
+            'paramsRoute' => array()
+        );
 
 
 
         return $this->render('blog/index.html.twig', [
           'posts' => $posts,
           'categories'=>$categories,
+          'pagination' => $pagination,
         ]);
     }
 
@@ -86,18 +98,18 @@ class HomeBlogController extends Controller
 
 
     /**
-     * @Route("/blog/categories", name="categories")
+     * @Route("/blog/categorie/{id}", name="categories")
      */
-    public function BlogcategoriesAction()
+    public function BlogcategoriesAction(Categories $categorie, $id)
     {
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
-        $categories= $this->getDoctrine()->getRepository(Categories::class)->findAll();
+        //$categories= $this->getDoctrine()->getRepository(Categories::class)->findAll();
 
 
 
         return $this->render('blog/categories.html.twig', [
           'posts' => $posts,
-          'categories'=>$categories,
+          'categorie'=>$categorie,
         ]);
     }
 

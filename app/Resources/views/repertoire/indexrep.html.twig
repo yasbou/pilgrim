@@ -4,30 +4,30 @@
 {{parent()}}
 
 <main>
-
+<img src="{{asset('images/haram.jpg')}}" alt="">
   <h1>Le Repertoire</h1>
   <p>Pilgrim.com vous facilite le depart</p>
 
 </main>
 
 <footer>
-<ul>
+  <ul>
 
-  <li><a href="{{path('list_agence', ({'page': 1}))}}"><i class="fas fa-align-justify"></i> <h2>les agences</h2> </a> </li>
-
-
-<li><a href="{{path('list_hotel',  ({'page': 1}))}}"><i class="fas fa-building"></i> <h2>les hotels</h2></a></li>
+      <li><a href="{{path('list_agence', ({'page': 1}))}}"><i class="fas fa-align-justify"></i> <h2>les agences</h2> </a> </li>
 
 
-</ul>
+      <li><a href="{{path('list_hotel',  ({'page': 1}))}}"><i class="fas fa-building"></i> <h2>les hotels</h2></a></li>
+  </ul>
+
+
+  <div class="after_footer">
+    <p>Toutes les Agences et Hotels rien que pour vous...</p>
+  </div>
 
 </footer>
 
-<div class="after_footer">
 
-  <p>Toutes les Agences et Hotels rien que pour vous...</p>
 
-</div>
 
 
 

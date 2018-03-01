@@ -3,7 +3,7 @@
 {% block body %}
 {{parent()}}
 
-
+<img src="{{asset('images/haram2.jpg')}}" alt="">
 <div class="agences">
 
   <h1>Toute les agences</h1>
@@ -32,9 +32,9 @@
 <div class="footer">
 
 
-{% if pagination.nbPages > 0 %}
+{% if pagination.nbPages > 1 %}
     <ul class="pagination">
-        {% if pagination.page > 1 %}
+        {% if pagination.page > 2 %}
 
         <li class="page-item">
           <a class="page-link" href="{{ path("list_by_region", ({'id':id, 'page': 1})) }}"> << </a>

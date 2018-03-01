@@ -4,8 +4,9 @@
 {{parent()}}
 
 
-
+<img src="{{asset('images/haram2.jpg')}}" alt="">
 <div class="hotels">
+  <h1>Vos hotels sélectionnés</h1>
 {% for H in hotels %}
   <div class="hotel">
 
@@ -32,9 +33,9 @@
   <div class="footer">
 
 
-  {% if pagination.nbPages > 0 %}
+  {% if pagination.nbPages > 1 %}
       <ul class="pagination">
-          {% if pagination.page > 1 %}
+          {% if pagination.page > 2 %}
 
           <li class="page-item">
             <a class="page-link" href="{{ path("list_hotel", ({'page': 1})) }}"> << </a>

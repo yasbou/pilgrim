@@ -89,3 +89,17 @@ main{
   margin-bottom: 10px;
 
 }
+
+#form_contact{
+  width: 1000px;
+  margin: 20px auto;
+}
+
+.send_btn{
+  margin: 20px auto;
+  background-color: #2b297d;
+}
+
+.form_input{
+  margin-top: 10px;
+}

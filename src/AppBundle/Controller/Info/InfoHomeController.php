@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Info\Info;
+use AppBundle\Service\Contact;
 
 class InfoHomeController extends Controller
 {
@@ -32,6 +33,7 @@ class InfoHomeController extends Controller
         return $this->render('info/info_show.html.twig', [
           'info' => $info,
           'infos' => $infos,
+
         ]);
     }
 

@@ -1,26 +1,26 @@
 <?php
-namespace AppBundle\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+namespace AppBundle\Service;
+
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
-use AppBundle\Entity\Info\Info;
-use Symfony\Component\HttpFoundation\Session\Session;
 
-
-class MailController extends Controller
+class Contact
 {
-  public function simplemailAction(Request $request)
+  private $request;
+
+	public function __construct(Request $request)
+	{
+		$this->request = $request;
+	}
+
+  public function simplemail()
     {
-      $session = new Session();
-          $infos = $this->getDoctrine()->getRepository(Info::class)->findAll();
-          $form = $this->createForm('AppBundle\Form\ContactType',null,array(
+          $form = $this->request->createForm('AppBundle\Form\ContactType',null,array(
               // To set the action use $this->generateUrl('route_identifier')
-              'action' => $this->generateUrl('myapplication_contact'),
+              'action' => $this->generateUrl('contact'),
               'method' => 'POST'
           ));
 
-        if ($request->isMethod('POST')) {
+        /*  if ($request->isMethod('POST')) {
               // Refill the fields in case the form is not valid.
               $form->handleRequest($request);
 
@@ -28,29 +28,26 @@ class MailController extends Controller
                 $data = $form->getData();
                   // Send mail
                   if($this->sendEmail($data)){
-                    $session->getFlashBag()->add('warning','Votre message à bien été envoyé il sera traité dans les plus brefs délais inchallah.');
 
+                      // Everything OK, redirect to wherever you want ! :
 
+                      return $this->redirectToRoute('myapplication_contact');
                   }else{
                       // An error ocurred, handle
-
+                      var_dump("Errooooor :(");
                   }
               }
           }
 
           return $this->render('Emails/simple_mail.html.twig', array(
-              'form' => $form->createView(),
-              'infos'=> $infos,
+              'form' => $form->createView()
           ));
+      }*/
 
+      return $form;
     }
 
       private function sendEmail($data){
-
-
-
-
-
           $myappContactMail = 'yassko77@hotmail.com';
           $myappContactPassword = 'muslim77';
 
@@ -71,11 +68,6 @@ class MailController extends Controller
         ))
         ->setBody($data['name'].' vous dit : '.$data["message"]);
 
-        $result= $mailer->send($message);
-        return $result;
-
-
-
-
+        return $mailer->send($message);
     }
   }

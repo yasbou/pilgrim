@@ -4,7 +4,9 @@
 {{parent()}}
 
 
-<img src="{{asset('images/haram2.jpg')}}" alt="">
+<img src="{{asset('images/haram2.jpg')}}" alt="masjid al haram">
+{% include 'widget/meteo.html.twig'%}
+{% include 'widget/convertisseur.html.twig'%}
 <div class="hotels">
   <h1>Vos hotels sélectionnés</h1>
 {% for H in hotels %}

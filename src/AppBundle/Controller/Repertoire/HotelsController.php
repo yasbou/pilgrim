@@ -55,7 +55,7 @@ class HotelsController extends Controller
     $com =  $request->getcontent();
 
     $number= substr($com, 0);
-    $texte= substr($com, 1);
+    $texte= stristr($com, "/");
     $id= intval($number);
 
 

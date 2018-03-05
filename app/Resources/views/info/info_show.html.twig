@@ -3,11 +3,14 @@
 {% block body %}
 {{parent()}}
 
+{% include 'widget/meteo.html.twig'%}
+{% include 'widget/convertisseur.html.twig'%}
+
   <div class="info_show">
 
 
   <h1 id= "titre_info">{{info.titre}}</h1>
-  <img src="{{asset('uploads/'~ info.image)}}" alt="">
+  <img src="{{asset('uploads/'~ info.image)}}" alt="la mecque">
   {% if info.soustitre %}
   <h2>{{info.soustitre}}</h2>
   {% endif %}

@@ -1,0 +1,62 @@
+#body_conv{
+  position: fixed;
+  right: 0%
+}
+
+
+#conv{
+  width: 150px;
+  text-align: center;
+  height: 250px;
+  position: absolute;
+}
+
+#billet{
+  width: 300px;
+  height: 150px;
+  transform: rotate(90deg);
+  margin-left: -74px;
+  margin-top: 80px;
+  position: relative;
+}
+
+#conv h4{
+  border-bottom: 1px solid gray;
+  color: white;
+  background-color: #2b297d;
+  opacity: 0.8;
+  margin-top: -200px;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 10px;
+
+}
+
+#conv button {
+  display: block;
+  margin: 10px auto;
+  border: 0px;
+  margin-bottom: 50px;
+  background-color: #2b297d;
+  opacity: 0.8;
+  color: white;
+
+}
+
+#conv button:hover {
+background-color: green
+}
+
+#conv input{
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.total{
+  color: white;
+  background-color: #2b297d;
+  padding: 10px;
+  width: 0px;
+  opacity: 0.8;
+
+}

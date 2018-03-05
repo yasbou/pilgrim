@@ -25,6 +25,9 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use JMS\Serializer\SerializerBuilder;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\BrowserKit\Cookie;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
 class HomeBlogController extends Controller
 {
@@ -148,9 +151,9 @@ class HomeBlogController extends Controller
 
 
     /**
-     * @Route("/logup", name="logup")
+     * @Route("/logup/{id}", name="logup")
      */
-    public function prestataireAction(Request $request, UserPasswordEncoderInterface $encoder)
+    public function prestataireAction(Request $request, UserPasswordEncoderInterface $encoder, $id)
     {
         $user = new User();
         $form = $this->createForm('AppBundle\Form\UserLogupType', $user);
@@ -170,7 +173,21 @@ class HomeBlogController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
-            return $this->redirectToRoute('show', array('id' => $user->getId()));
+
+            $token = new UsernamePasswordToken($user, null, 'main', $user->getRoles());
+            $this->get('security.token_storage')->setToken($token);
+
+        // If the firewall name is not main, then the set value would be instead:
+        // $this->get('session')->set('_security_XXXFIREWALLNAMEXXX', serialize($token));
+          $this->get('session')->set('_security_main', serialize($token));
+
+        // Fire the login event manually
+          $event = new InteractiveLoginEvent($request, $token);
+          $this->get("event_dispatcher")->dispatch("security.interactive_login", $event);
+
+
+
+            return $this->redirectToRoute('commentaires', array('id' => $id));
         }
         return $this->render('log_form/logup.html.twig', [
             'user' => $user,
@@ -201,7 +218,7 @@ class HomeBlogController extends Controller
        $com =  $request->getcontent();
 
        $number= substr($com, 0);
-       $texte= substr($com, 1);
+       $texte= stristr($com, "/");
        $id= intval($number);
 
 

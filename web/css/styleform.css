@@ -1,0 +1,53 @@
+
+.tete{
+  color:white;
+}
+
+.log_form{
+
+  background-color: #2b297d;
+  padding: 20px;
+  text-align: center;
+  display: block;
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%);
+}
+
+.log_form label{
+  color: white;
+
+}
+
+.log_form input{
+  display: block;
+  margin: 0px auto;
+  width: 300px;
+
+}
+
+.log_form button{
+  margin-top: 20px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.log_form button:hover{
+  background-color: green;
+  color:white;
+
+}
+
+#error{
+  color: red;
+  margin-bottom: 20px;
+}
+
+
+
+#generate input{
+  display: block;
+  margin: 0px auto;
+  width: 300px;
+
+}

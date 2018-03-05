@@ -5,8 +5,9 @@ namespace AppBundle\Controller\Blog\Admin;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 /**
  * User controller.
  *
@@ -79,13 +80,30 @@ class UserController extends Controller
      * @Route("/{id}/edit", name="admin_user_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, User $user)
+    public function editAction(Request $request, User $user, UserPasswordEncoderInterface $encoder)
     {
+
+        $currentPassword = $user->getPassword();
+        $user->setPassword('');
+
+
         $deleteForm = $this->createDeleteForm($user);
         $editForm = $this->createForm('AppBundle\Form\UserType', $user);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+          if(!empty($user->getPassword())) {
+            // Encodage du mot de passe présent dans le form
+            $encoded = $encoder->encodePassword($user, $user->getPassword());
+            // Sauvegarde du nouveau mot de passe
+            $user->setPassword($encoded);
+        }
+        else{
+            $user->setPassword($currentPassword);
+        }
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_user_edit', array('id' => $user->getId()));

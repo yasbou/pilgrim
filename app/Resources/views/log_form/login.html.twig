@@ -1,6 +1,23 @@
+{% extends 'log_form/baseform.html.twig'%}
+
+{% block body %}
+{{ parent() }}
+
+
+<div class="log_form">
+
+<div class="tete">
+  <h1>Connexion</h1>
+  <p>Vous n'avez pas encore de compte ? <a href="{{path('logup', {'id': 1})}}"> Créez-en un !</a></p>
+</div>
+
+<div id="error">
+
 {% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    <div>votre username ou votre mot de passe est incorrect.</div>
 {% endif %}
+</div>
+
 
 <form action="{{ path('login') }}" method="post">
     <label for="username">Username:</label>
@@ -19,5 +36,11 @@
         <input type="hidden" name="_target_path" value="/account" />
     #}
 
-    <button type="submit">login</button>
+    <button type="submit">connexion</button>
 </form>
+
+<a href="{{path('resetpassword')}}">Mot de passe oublié</a>
+
+</div>
+
+{% endblock %}

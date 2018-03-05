@@ -1,0 +1,58 @@
+
+    {% block body %}
+    <div id="body_conv">
+
+      <img id="billet" src="{{asset('images/rial.jpeg')}}" alt="">
+        <div id="conv">
+          <h4>Convertir en ryal</h4>
+          <input id="montant" type="text" name="Montant" placeholder="Montant en €">
+          <button id="btn" type="button" name="button">convertir</button>
+          <span id="total"></span>
+        </div>
+    </div>
+
+    {% endblock %}
+
+    {% block javascripts %}
+    <script
+       src="http://code.jquery.com/jquery-3.3.1.min.js"
+       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+       crossorigin="anonymous">
+    </script>
+
+
+    <script type="text/javascript">
+      console.log('hello')
+      let conv={
+        init:function(){
+          $('#btn').click(conv.taux)
+        },
+        taux: function(){
+          $.ajax({
+            url: 'http://localhost/Pilgrim/pilgrim/web/app_dev.php/taux/',
+            dataType: 'json',
+
+            success: function(data){
+              conv.calcul(data);
+            }
+        });
+      },
+
+        calcul: function(data){
+
+          var montant= $('#montant').val();
+          var chiffre= montant*data;
+          var total = chiffre.toFixed(2)
+          console.log(total);
+          conv.affich(total);
+        },
+
+        affich: function(total){
+            var affich = total+' SAR';
+            $('#total').addClass('total').text(affich);
+        }
+    }
+    $(conv.init);
+    </script>
+
+    {% endblock %}

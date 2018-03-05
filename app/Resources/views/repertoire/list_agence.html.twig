@@ -3,8 +3,9 @@
 {% block body %}
 {{parent()}}
 
-
 <img src="{{asset('images/haram2.jpg')}}" alt="">
+{% include 'widget/meteo.html.twig'%}
+{% include 'widget/convertisseur.html.twig'%}
 <div class="agences">
 
   <h1>Toute les agences</h1>

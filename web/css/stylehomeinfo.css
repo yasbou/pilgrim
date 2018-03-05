@@ -74,13 +74,17 @@ main{
   outline-style:none;
 }
 
+#titre_info{
+text-transform: uppercase; 
+}
+
 .info_show{
   width: 800px;
   margin: 20px auto;
 }
 
 .info_show img{
-  width: 800px;
+  width: 500px;
 }
 
 .info_show li{

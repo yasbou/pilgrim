@@ -1,10 +1,21 @@
 
-<body>
+{% extends 'log_form/baseform.html.twig'%}
+
+{% block body %}
+{{ parent() }}
 
 
-{{ form_start(form) }}
-        		{{ form_widget(form) }}
-        		<input type="submit" value="M'inscrire" />
-{{ form_end(form) }}
+  <div class="log_form">
+    <div class="tete">
 
-</body>
+      <h1>Créer un compte</h1>
+
+    </div>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">M'inscrire </button>
+    {{ form_end(form) }}
+
+  </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'log_form/baseform.html.twig'%}
+
+{% block body %}
+{{ parent() }}
+
+
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+
+<div class="log_form">
+  <div class="tete">
+    <h1>Personnalisez votre mot de passe</h1>
+    </div>
+{{ form_start(form2) }}
+    {{ form_widget(form2) }}
+    {{ form_rest(form2) }}
+    <button type="submit">ok</button>
+  {{ form_end(form2) }}
+
+</div>
+
+
+
+{% else %}
+<div class="log_form">
+  <div class="tete">
+
+    <h1>Pas de panique </h1>
+    <ul>
+      <li>Etape 1:  Entrez votre adresse avec laquelle vous avez créer votre compte.</li>
+      <li>Etape 2:  Vérifiez vos mails vous avez reçu votre nouveau mot de passe.</li>
+      <li>Etape 3:  <a href="{{path('login')}}"> Connectez-vous </a> avec votre nouveau mot de passe et modifiez-le.</li>
+
+    </ul>
+  </div>
+  <div id='generate'>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_rest(form) }}
+    <button type="submit">ok</button>
+  {{ form_end(form) }}
+</div>
+</div>
+{% endif %}
+
+{% endblock %}

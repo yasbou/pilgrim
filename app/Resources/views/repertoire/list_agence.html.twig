@@ -3,9 +3,11 @@
 {% block body %}
 {{parent()}}
 
+
 <img src="{{asset('images/haram2.jpg')}}" alt="">
 {% include 'widget/meteo.html.twig'%}
 {% include 'widget/convertisseur.html.twig'%}
+
 <div class="agences">
 
   <h1>Toute les agences</h1>
@@ -13,7 +15,7 @@
 
 {% for A in agences %}
 
-<div class="card agence" style="width: 18rem;">
+<div class="card agence" >
   <img class="card-img-top" src="{{asset('uploads/'~ A.logo)}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{A.nom}}</h5>

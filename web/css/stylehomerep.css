@@ -102,3 +102,292 @@ footer a:hover{
   margin-top: 20px;
 
 }
+
+
+@media (max-width: 575px)
+{
+
+  main h1{
+
+    margin-top: 0px;
+    font-size: 10px;
+    color:black;
+
+
+  }
+
+  main p{
+
+    margin-top: 0px;
+    color:black;
+    font-size: 20px;
+  }
+
+  footer{
+
+    height: 200px;
+    margin-top: 10px;
+    font-size: 20px;
+
+  }
+
+  footer li{
+    color:lightgray;
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    background-color: #2b297d;
+  }
+
+  footer h2{
+    display: block;
+    color:white;
+    text-decoration: none;
+    width: 130px;
+    padding: 20px;
+    font-size: 15px;
+
+  }
+
+  footer a{
+     opacity: 0.6;
+    color:white;
+    text-decoration: none;
+  }
+
+  footer a:hover{
+    opacity: 1;
+    color:white;
+    font-weight: bold;
+  }
+
+  .fa-align-justify, .fa-building{
+
+    font-size: 50px
+  }
+
+  .after_footer{
+
+
+    font-size: 10px;
+    color: white;
+    margin-top: 20px;
+    background-color: #2b297d;
+
+  }
+}
+
+  @media (min-width: 576px) and (max-width: 767px) {
+
+
+    main h1{
+
+      margin-top: 0px;
+      font-size: 15px;
+      color:black;
+
+    }
+
+    main p{
+
+      margin-top: 0px;
+      color:black;
+      font-size: 20px;
+    }
+
+    footer{
+
+      height: 200px;
+      margin-top: 50px;
+      font-size: 20px;
+
+    }
+
+    footer li{
+      color:lightgray;
+      display: inline-block;
+      padding-top: 10px;
+      margin-bottom: 10px;
+      background-color: #2b297d;
+    }
+
+    footer h2{
+      display: block;
+      color:white;
+      text-decoration: none;
+      width: 130px;
+      padding: 20px;
+      font-size: 15px;
+
+    }
+
+    footer a{
+       opacity: 0.6;
+      color:white;
+      text-decoration: none;
+    }
+
+    footer a:hover{
+      opacity: 1;
+      color:white;
+      font-weight: bold;
+    }
+
+    .fa-align-justify, .fa-building{
+
+      font-size: 50px
+    }
+
+    .after_footer{
+
+
+      font-size: 10px;
+      color: white;
+      margin-top: 20px;
+      background-color: #2b297d;
+
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+  main h1{
+
+    margin-top: -300px;
+    font-size: 15px;
+    color:white;
+
+  }
+
+  main p{
+
+    margin-top: 0px;
+    color:white;
+    font-size: 20px;
+  }
+
+  footer{
+
+    height: 200px;
+    margin-top: 50px;
+    font-size: 20px;
+
+  }
+
+  footer li{
+    color:lightgray;
+    display: inline-block;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    background-color: #2b297d;
+  }
+
+  footer h2{
+    display: block;
+    color:white;
+    text-decoration: none;
+    width: 130px;
+    padding: 20px;
+    font-size: 15px;
+
+  }
+
+  footer a{
+     opacity: 0.6;
+    color:white;
+    text-decoration: none;
+  }
+
+  footer a:hover{
+    opacity: 1;
+    color:white;
+    font-weight: bold;
+  }
+
+  .fa-align-justify, .fa-building{
+
+    font-size: 70px
+  }
+
+  .after_footer{
+
+
+    font-size: 15px;
+    color: white;
+    margin-top: 25px;
+    background-color: #2b297d;
+
+  }
+ }
+
+
+ @media (min-width: 992px) and (max-width: 1199px) {
+
+   main h1{
+
+     margin-top: -400px;
+     font-size: 15px;
+     color:white;
+
+   }
+
+   main p{
+
+     margin-top: 0px;
+     color:white;
+     font-size: 20px;
+   }
+
+   footer{
+
+     height: 200px;
+     margin-top: 50px;
+     font-size: 20px;
+
+   }
+
+   footer li{
+     color:lightgray;
+     display: inline-block;
+     padding-top: 10px;
+     margin-bottom: 10px;
+     background-color: #2b297d;
+   }
+
+   footer h2{
+     display: block;
+     color:white;
+     text-decoration: none;
+     width: 130px;
+     padding: 20px;
+     font-size: 15px;
+
+   }
+
+   footer a{
+      opacity: 0.6;
+     color:white;
+     text-decoration: none;
+   }
+
+   footer a:hover{
+     opacity: 1;
+     color:white;
+     font-weight: bold;
+   }
+
+   .fa-align-justify, .fa-building{
+
+     font-size: 50px
+   }
+
+   .after_footer{
+
+
+     font-size: 15px;
+     color: white;
+     margin-top: 25px;
+     background-color: #2b297d;
+
+ }
+}

@@ -7,12 +7,12 @@
         <title>{% block title %}Notre Blog{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('css/stylemeteo.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styleconv.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styleHomeBlog.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styleshow.css') }}">
         <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:300" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('css/stylemeteo.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/styleconv.css') }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -68,6 +68,9 @@
       </header>
 
         <h1><span>LE BLOG</span> DE NAIMA</h1>
+
+        {% include 'widget/meteo.html.twig'%}
+        {% include 'widget/convertisseur.html.twig'%}
 
         {% endblock %}
 

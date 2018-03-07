@@ -6,7 +6,10 @@
   opacity: 0.7;
   padding: 20px;
 }
-
+ .agences h1{
+   font-size: 20px;
+   color: white;
+ }
 
 .agence{
   display: inline-block;
@@ -71,4 +74,496 @@
     background-color: #1C8C42;
     color: #ffffff;
     border: 1px solid #dddddd;
+}
+
+@media (max-width: 575px) {
+
+  .agences{
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    background-color: #2b297d;
+    opacity: 1;
+
+  }
+
+
+  .agence{
+    width: 150px;
+    height: 290px;
+    display: inline-block;
+    font-size: 10px;
+    margin: 10px;
+  }
+
+  .agence img{
+    width: 40px;
+  }
+
+  .agence hr{
+    width: 70px;
+    color: black;
+  }
+
+  .card-title{
+    font-size: 11px;
+  }
+
+  .agences:hover{
+    opacity: 1;
+  }
+
+  .card-text{
+    height: 10px;
+  }
+
+  .agence h6{
+    font-size: 10px;
+  }
+
+  .btn{
+    font-size: 9px;
+    background-color: #2b297d;
+    color: white;
+  }
+
+  .footer{
+    margin: 20px auto;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .reservations{
+      background-color: #BF3E26;
+      font-size: 13pt;
+      margin-bottom: 50px;
+  }
+
+  .reservations a{
+      color:#98fb98;
+  }
+  .reservations a:hover ,.reservations a:focus , .reservations a:visited{
+      color:#98fb98;
+  }
+  .pagination > li > a,
+  .pagination > li > span{
+      color: #BF3E26;
+
+  }
+
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus{
+      background-color: #98fb98;
+      color:#BF3E26;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus{
+      background-color: #1C8C42;
+      color: #ffffff;
+      border: 1px solid #dddddd;
+  }
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+
+
+   .agences{
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    background-color: #2b297d;
+    opacity: 1;
+
+  }
+
+
+  .agence{
+    width: 150px;
+    height: 290px;
+    display: inline-block;
+    font-size: 10px;
+    margin: 10px;
+  }
+
+  .agence img{
+    width: 40px;
+  }
+
+  .agence hr{
+    width: 70px;
+    color: black;
+  }
+
+  .card-title{
+    font-size: 11px;
+  }
+
+  .agences:hover{
+    opacity: 1;
+  }
+
+  .card-text{
+    height: 10px;
+  }
+
+  .agence h6{
+    font-size: 10px;
+  }
+
+  .btn{
+    font-size: 9px;
+    background-color: #2b297d;
+    color: white;
+  }
+
+  .footer{
+    margin: 20px auto;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .reservations{
+      background-color: #BF3E26;
+      font-size: 13pt;
+      margin-bottom: 50px;
+  }
+
+  .reservations a{
+      color:#98fb98;
+  }
+  .reservations a:hover ,.reservations a:focus , .reservations a:visited{
+      color:#98fb98;
+  }
+  .pagination > li > a,
+  .pagination > li > span{
+      color: #BF3E26;
+
+  }
+
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus{
+      background-color: #98fb98;
+      color:#BF3E26;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus{
+      background-color: #1C8C42;
+      color: #ffffff;
+      border: 1px solid #dddddd;
+  }
+ }
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .agences{
+   width: 400px;
+   text-align: center;
+   margin: 0px auto;
+   background-color: #2b297d;
+   opacity: 1;
+
+  }
+
+
+  .agence{
+   width: 150px;
+   height: 290px;
+   display: inline-block;
+   font-size: 10px;
+   margin: 10px;
+  }
+
+  .agence img{
+   width: 40px;
+  }
+
+  .agence hr{
+   width: 70px;
+   color: black;
+  }
+
+  .card-title{
+   font-size: 11px;
+  }
+
+  .agences:hover{
+   opacity: 1;
+  }
+
+  .card-text{
+   height: 10px;
+  }
+
+  .agence h6{
+   font-size: 10px;
+  }
+
+  .btn{
+   font-size: 9px;
+   background-color: #2b297d;
+   color: white;
+  }
+
+  .footer{
+   margin: 20px auto;
+   text-align: center;
+   display: inline-block;
+  }
+
+  .reservations{
+     background-color: #BF3E26;
+     font-size: 13pt;
+     margin-bottom: 50px;
+  }
+
+  .reservations a{
+     color:#98fb98;
+  }
+  .reservations a:hover ,.reservations a:focus , .reservations a:visited{
+     color:#98fb98;
+  }
+  .pagination > li > a,
+  .pagination > li > span{
+     color: #BF3E26;
+
+  }
+
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus{
+     background-color: #98fb98;
+     color:#BF3E26;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus{
+     background-color: #1C8C42;
+     color: #ffffff;
+     border: 1px solid #dddddd;
+  }
+
+
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .agences{
+   width: 600px;
+   text-align: center;
+   margin: 0px auto;
+   background-color: #2b297d;
+   opacity: 1;
+
+  }
+
+
+  .agence{
+   width: 150px;
+   height: 290px;
+   display: inline-block;
+   font-size: 10px;
+   margin: 10px;
+  }
+
+  .agence img{
+   width: 40px;
+  }
+
+  .agence hr{
+   width: 70px;
+   color: black;
+  }
+
+  .card-title{
+   font-size: 11px;
+  }
+
+  .agences:hover{
+   opacity: 1;
+  }
+
+  .card-text{
+   height: 10px;
+  }
+
+  .agence h6{
+   font-size: 10px;
+  }
+
+  .btn{
+   font-size: 9px;
+   background-color: #2b297d;
+   color: white;
+  }
+
+  .footer{
+   margin: 20px auto;
+   text-align: center;
+   display: inline-block;
+  }
+
+  .reservations{
+     background-color: #BF3E26;
+     font-size: 13pt;
+     margin-bottom: 50px;
+  }
+
+  .reservations a{
+     color:#98fb98;
+  }
+  .reservations a:hover ,.reservations a:focus , .reservations a:visited{
+     color:#98fb98;
+  }
+  .pagination > li > a,
+  .pagination > li > span{
+     color: #BF3E26;
+
+  }
+
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus{
+     background-color: #98fb98;
+     color:#BF3E26;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus{
+     background-color: #1C8C42;
+     color: #ffffff;
+     border: 1px solid #dddddd;
+  }
+
+
+ }
+@media (min-width: 1200px) {
+
+  .meteo{
+    position: fixed;
+    margin-left: 10px;
+    margin-top: -200px;
+    background-color: white;
+  }
+
+  #body_conv{
+    position: fixed;
+    right: -5%;
+    margin-top: -200px;
+  }
+
+
+
+  .agences{
+   width: 700px;
+   text-align: center;
+   margin: 0px auto;
+   background-color: #2b297d;
+   opacity: 1;
+
+  }
+
+
+  .agence{
+   width: 150px;
+   height: 290px;
+   display: inline-block;
+   font-size: 10px;
+   margin: 10px;
+  }
+
+  .agence img{
+   width: 40px;
+  }
+
+  .agence hr{
+   width: 70px;
+   color: black;
+  }
+
+  .card-title{
+   font-size: 11px;
+  }
+
+  .agences:hover{
+   opacity: 1;
+  }
+
+  .card-text{
+   height: 10px;
+  }
+
+  .agence h6{
+   font-size: 10px;
+  }
+
+  .btn{
+   font-size: 9px;
+   background-color: #2b297d;
+   color: white;
+  }
+
+  .footer{
+   margin: 20px auto;
+   text-align: center;
+   display: inline-block;
+  }
+
+  .reservations{
+     background-color: #BF3E26;
+     font-size: 13pt;
+     margin-bottom: 50px;
+  }
+
+  .reservations a{
+     color:#98fb98;
+  }
+  .reservations a:hover ,.reservations a:focus , .reservations a:visited{
+     color:#98fb98;
+  }
+  .pagination > li > a,
+  .pagination > li > span{
+     color: #BF3E26;
+
+  }
+
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus{
+     background-color: #98fb98;
+     color:#BF3E26;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus{
+     background-color: #1C8C42;
+     color: #ffffff;
+     border: 1px solid #dddddd;
+  }
 }

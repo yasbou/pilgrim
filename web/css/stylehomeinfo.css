@@ -7,9 +7,8 @@ body{
 }
 
 header{
-  background-color: #2b297d;
+
   color: white;
-  padding: 30px;
   text-align: center;
 }
 
@@ -75,7 +74,7 @@ main{
 }
 
 #titre_info{
-text-transform: uppercase; 
+text-transform: uppercase;
 }
 
 .info_show{
@@ -107,3 +106,341 @@ text-transform: uppercase;
 .form_input{
   margin-top: 10px;
 }
+
+
+@media (max-width: 575px) {
+
+  body h1{
+    font-size: 20px;
+  }
+
+  main{
+
+    color: #2b297d;
+    margin: 20px auto;
+    width: 280px;
+
+  }
+
+  /*
+  .card-deck{
+    width: 330px;
+    margin: 20px auto;
+    display: inline-block;
+  }*/
+
+
+  .card-deck{
+    width: 250px;
+    display: inline-block;
+    margin: 10px auto;
+    margin-left: 5%;
+
+  }
+
+
+  .card img{
+    display: none;
+  }
+
+  #titre_info{
+  text-transform: uppercase;
+  }
+
+  .info_show{
+    width: 260px;
+    margin: 20px auto;
+  }
+
+  .info_show img{
+    width: 200px;
+  }
+
+  .info_show li{
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  #form_contact{
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .send_btn{
+    margin: 20px auto;
+    background-color: #2b297d;
+  }
+
+  .form_input{
+    margin-top: 10px;
+  }
+
+
+}
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+  body h1{
+    font-size: 20px;
+  }
+
+  main{
+
+    color: #2b297d;
+    margin: 20px auto;
+    width: 100%;
+
+  }
+
+  /*
+  .card-deck{
+    width: 330px;
+    margin: 20px auto;
+    display: inline-block;
+  }*/
+
+
+  .card-deck{
+    width: 250px;
+    display: inline-block;
+    margin: 10px auto;
+    margin-left: 5%;
+
+  }
+
+
+  .card img{
+    display: none;
+  }
+
+
+    #titre_info{
+    text-transform: uppercase;
+    }
+
+    .info_show{
+      width: 570px;
+      margin: 20px auto;
+    }
+
+    .info_show img{
+      width: 200px;
+    }
+
+    .info_show li{
+      font-size: 12px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+    }
+
+    #form_contact{
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    .send_btn{
+      margin: 20px auto;
+      background-color: #2b297d;
+    }
+
+    .form_input{
+      margin-top: 10px;
+    }
+
+
+ }
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  body h1{
+    font-size: 20px;
+  }
+
+  main{
+
+    color: #2b297d;
+    margin: 20px auto;
+    width: 300px;
+
+  }
+
+  /*
+  .card-deck{
+    width: 330px;
+    margin: 20px auto;
+    display: inline-block;
+  }*/
+
+
+  .card-deck{
+    width: 250px;
+    display: inline-block;
+    margin: 10px auto;
+    margin-left: 5%;
+
+  }
+
+
+  .card img{
+    display: none;
+  }
+
+  #titre_info{
+  text-transform: uppercase;
+  }
+
+  .info_show{
+    width: 400px;
+    margin: 20px auto;
+  }
+
+  .info_show img{
+    width: 200px;
+  }
+
+  .info_show li{
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  #form_contact{
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .send_btn{
+    margin: 20px auto;
+    background-color: #2b297d;
+  }
+
+  .form_input{
+    margin-top: 10px;
+  }
+
+
+
+ }
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  body h1{
+    font-size: 20px;
+  }
+
+  main{
+
+    color: #2b297d;
+    margin: 20px auto;
+    width: 300px;
+
+  }
+
+  /*
+  .card-deck{
+    width: 330px;
+    margin: 20px auto;
+    display: inline-block;
+  }*/
+
+
+  .card-deck{
+    width: 250px;
+    display: inline-block;
+    margin: 10px auto;
+    margin-left: 5%;
+
+  }
+
+
+  .card img{
+    ;
+  }
+
+  #titre_info{
+  text-transform: uppercase;
+  }
+
+  .info_show{
+    width: 580px;
+    margin: 20px auto;
+  }
+
+  .info_show img{
+    width: 200px;
+  }
+
+  .info_show li{
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  #form_contact{
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .send_btn{
+    margin: 20px auto;
+    background-color: #2b297d;
+  }
+
+  .form_input{
+    margin-top: 10px;
+  }
+
+
+
+ }
+
+
+
+@media (min-width: 1200px) {
+
+  body h1{
+    font-size: 20px;
+  }
+
+  main{
+
+    color: #2b297d;
+    margin: 20px auto;
+    width: 600px;
+
+  }
+
+  /*
+  .card-deck{
+    width: 330px;
+    margin: 20px auto;
+    display: inline-block;
+  }*/
+
+
+  .card-deck{
+    width: 250px;
+    display: inline-block;
+    margin: 10px auto;
+    margin-left: 5%;
+
+  }
+
+
+  .card img{
+    ;
+  }
+
+
+
+
+
+ }

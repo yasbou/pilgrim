@@ -18,8 +18,9 @@ body::after{
 }
 
 .main{
+  display:block;
   margin: 0px auto;
-   position: relative;
+
 }
 
 

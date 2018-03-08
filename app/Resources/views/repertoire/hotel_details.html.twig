@@ -65,7 +65,7 @@
 
         {% else %}
           <p>
-            Réagir sur cette hotel <a href="{{path('login')}}">connectez-vous</a> ou <a href="{{path('logup')}}">inscrivez-vous</a> en quelques click.
+            Réagir sur cette hotel <a href="{{path('login')}}">connectez-vous</a> ou <a href="{{path('logup',  {'id' : hotel.id })}}">inscrivez-vous</a> en quelques click.
           </p>
         {% endif %}
 

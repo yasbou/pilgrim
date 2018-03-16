@@ -11,12 +11,23 @@
 </main>
 
 <footer>
+
   <ul>
+    <a href="{{path('list_agence', ({'page': 1}))}}">
+      <li>
+        <img src="{{ asset('images/agence.jpg') }}" alt="la porte de la kaaba">
+        <h5>Répertoire</h5>
+      </li>
+    </a>
 
-      <li><a href="{{path('list_agence', ({'page': 1}))}}"><i class="fas fa-align-justify"></i> <h2>les agences</h2> </a> </li>
+    <a href="{{path('list_hotel',  ({'page': 1}))}}">
+      <li>
+        <img src="{{ asset('images/hotels.jpg') }}" alt="le coran">
+        <h5>hotels</h5>
+      </li>
+    </a>
 
 
-      <li><a href="{{path('list_hotel',  ({'page': 1}))}}"><i class="fas fa-building"></i> <h2>les hotels</h2></a></li>
   </ul>
 
 

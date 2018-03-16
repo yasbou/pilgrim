@@ -5,6 +5,10 @@ background-repeat: no-repeat;
 color: white;
 
 }
+
+#mention a{
+  color: white;
+}
 /* si l'image du fond d'écran est une <img> html
 
 img{

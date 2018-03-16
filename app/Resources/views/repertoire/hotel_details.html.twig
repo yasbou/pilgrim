@@ -34,7 +34,6 @@
           <h3><i class="fas fa-comments"> </i> Commentaire:</h3>
 
 
-
         {% for com in hotel.commentaires %}
 
           <ul class="comment">
@@ -46,9 +45,13 @@
           </ul>
         {% endfor %}
 
+        
+
+
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
         <div id="titre">
+
 
         <h3>Laisser un commentaire</h3>
         </div>

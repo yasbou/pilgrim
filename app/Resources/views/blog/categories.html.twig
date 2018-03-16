@@ -1,1 +1,71 @@
-test
+{% extends 'blog/baseblog.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+
+
+<div class="main">
+
+
+  <div id="intro">
+
+  <h3> Nos articles dans la catégorie: {{ categorie.categorieNom}}</h3>
+
+
+</div>
+
+      {% for post in categorie.posts %}
+      <div class="article">
+        <img src="{{asset('uploads/'~ post.image)}}" alt="">
+          <a href="{{path('commentaires', { 'id': post.id })}}"><h2>{{ post.titre}}</h2></a>
+          <ul>
+            <li> <i class="far fa-user"></i> {{ post.auteur }} - </li>
+            <li> <i class="far fa-calendar-alt"></i> {{ post.date | date('d-m-Y') }} - </li>
+            <li> <i class="fas fa-list"> </i> {{post.categories.categorieNom}}</li>
+          </ul>
+            <p>{{post.resume}}</p>
+
+          </div>
+      {% endfor %}
+
+      <div id="pagination">
+
+{% if pagination.nbPages > 1 %}
+    <ul class="pagination">
+        {% if pagination.page > 2 %}
+
+        <li class="page-item">
+          <a class="page-link" href="{{ path("homeBlogpage", ({'page': 1})) }}"> << </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="{{ path("homeBlogpage", ({'page': pagination.page-1})) }}"> Previous </a>
+            </li>
+        {% endif %}
+
+        {# Affichage de toutes les pages entre p-4 et p+4 sauf si < 1 ou > nbPages #}
+        {% for p in range(max(pagination.page-4, 1), min(pagination.page+4, pagination.nbPages)) %}
+            <li class="page-item {% if p == pagination.page %}active{% endif %}" >
+                <a class="page-link" href="{{ path('homeBlogpage', ({'page': p})) }}">{{ p }}</a>
+            </li>
+        {% endfor %}
+
+        {% if pagination.page < pagination.nbPages %}
+            <li class="page-item" >
+                <a class="page-link" href="{{path('homeBlogpage', ({'page': pagination.page+1})) }}">
+                    Next
+                </a>
+            </li>
+            <li  class="page-item">
+                <a class="page-link" href="{{ path('homeBlogpage', ({'page': pagination.nbPages})) }}">
+                    >></a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+</div>
+
+
+{% include 'blog/footer.html.twig' %}
+
+{% endblock %}

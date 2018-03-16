@@ -45,4 +45,12 @@ class HomeController extends Controller
      {
        return $this->render('widget/convertisseur.html.twig');
      }
+
+     /**
+      * @Route("/mention_legale/", name="mention_legale")
+      */
+      public function mentionAction(Request $request)
+      {
+        return $this->render('home/mention.html.twig');
+      }
 }

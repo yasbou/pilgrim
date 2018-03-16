@@ -101,36 +101,43 @@ class HomeBlogController extends Controller
 
 
     /**
-     * @Route("/blog/categorie/{id}", name="categories")
+     * @Route("/blog/categorie/{id}/{page}", name="categories")
      */
-    public function BlogcategoriesAction(Categories $categorie, $id)
+    public function BlogcategoriesAction(Request $request, Categories $categorie, $id, $page)
     {
-        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
-        //$categories= $this->getDoctrine()->getRepository(Categories::class)->findAll();
+
+
+      $nbArticlesParPage = $this->container->getParameter('front_nb_post_par_page');
+
+         $em = $this->getDoctrine()->getManager();
+
+         $posts = $em->getRepository(Post::class)
+             ->findByIdPagineEtTrie($page, $nbArticlesParPage, $id);
+
+         $pagination = array(
+             'page' => $page,
+             'nbPages' => ceil(count($posts) / $nbArticlesParPage),
+             'nomRoute' => 'front_articles_index',
+             'paramsRoute' => array()
+         );
+
+
+        $categories = $this->getDoctrine()->getRepository(Categories::class)->findAll();
+        $post= $this->getDoctrine()->getRepository(Post::class)->findAll();
 
 
 
         return $this->render('blog/categories.html.twig', [
+          'categories' => $categories,
           'posts' => $posts,
           'categorie'=>$categorie,
+          'post' => $post,
+          'pagination'=> $pagination,
+          'id' => $id
         ]);
     }
 
-    /**
-     * @Route("/blog/apropos", name="apropos")
-     */
-    public function BlogaproposAction()
-    {
-        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
-        $categories= $this->getDoctrine()->getRepository(Categories::class)->findAll();
 
-
-
-        return $this->render('blog/apropos.html.twig', [
-          'posts' => $posts,
-          'categories'=>$categories,
-        ]);
-    }
 
     /**
      * @Route("/blog/contact", name="contact")

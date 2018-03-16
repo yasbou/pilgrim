@@ -14,7 +14,17 @@ class InfoType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('soustitre')->add('listeA')->add('listeB')->add('listeC')->add('listeD')->add('listeE')->add('image', FileType::class);
+        $builder->add('titre')->add('soustitre')->add('listeA', null, array(
+    'required'   => false,))
+->add('listeB', null, array(
+'required'   => false,))
+->add('listeC', null, array(
+'required'   => false,))
+->add('listeD', null, array(
+'required'   => false,))
+->add('listeE', null, array(
+'required'   => false,))
+->add('image', FileType::class);
     }/**
      * {@inheritdoc}
      */

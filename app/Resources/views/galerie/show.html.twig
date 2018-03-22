@@ -1,0 +1,33 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+{% include 'admin/header.html.twig' %}
+<div class="bodyadmin">
+    <h1>Galerie</h1>
+
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ galerie.id }}</td>
+            </tr>
+            <tr>
+                <th>Picturename</th>
+                <td>{{ galerie.pictureName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="btn btn-primary btn-sm" href="{{ path('galerie_index') }}">Back to the list</a>
+        </li>
+        
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

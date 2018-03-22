@@ -72,7 +72,7 @@ img{
   font-weight: bold;
 }
 
-.fa-comment-alt, .fa-pencil-alt, .fa-users, .fa-list, .fa-align-justify, .fa-building, .fa-clipboard{
+.fa-comment-alt, .fa-pencil-alt, .fa-users, .fa-list, .fa-align-justify, .fa-building, .fa-clipboard, .fa-images{
 
   font-size: 100px
 }
@@ -88,4 +88,8 @@ img{
 
 .btn{
   margin-top: 20px;
+}
+
+#picture_galerie{
+  width: 80px;
 }

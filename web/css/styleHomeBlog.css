@@ -17,6 +17,17 @@ body::after{
   z-index: -1;
 }
 
+#playlist{
+  margin-top: 200px;
+right: 0%
+}
+
+#live{
+    margin-top: 600px;
+  right: 0%
+}
+
+
 .main{
 
   display: block;
@@ -379,6 +390,10 @@ display: none;
 
 
 @media (min-width: 768px) and (max-width: 991px) {
+
+
+
+
   body{
 
   background-size: 200%;

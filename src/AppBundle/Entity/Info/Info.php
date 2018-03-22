@@ -45,28 +45,28 @@ class Info
     /**
      * @var string
      *
-     * @ORM\Column(name="listeB", type="text")
+     * @ORM\Column(name="listeB", type="text", nullable=true)
      */
     private $listeB;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="listeC", type="text")
+     * @ORM\Column(name="listeC", type="text", nullable=true)
      */
     private $listeC;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="listeD", type="text")
+     * @ORM\Column(name="listeD", type="text", nullable=true)
      */
     private $listeD;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="listeE", type="text")
+     * @ORM\Column(name="listeE", type="text", nullable=true)
      */
     private $listeE;
 

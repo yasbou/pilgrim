@@ -5,6 +5,9 @@ namespace AppBundle\Controller\Home;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Galerie;
+use AppBundle\Entity\Info\Info;
+
 
 class HomeController extends Controller
 {
@@ -53,4 +56,17 @@ class HomeController extends Controller
       {
         return $this->render('home/mention.html.twig');
       }
+
+      /**
+       * @Route("/galerie/", name="galerie")
+       */
+       public function galerieAction(Request $request)
+       {
+           $picture = $this->getDoctrine()->getRepository(Galerie::class)->findAll();
+           $infos = $this->getDoctrine()->getRepository(Info::class)->findAll();
+         return $this->render('info/galerie.html.twig', [
+           'picture' => $picture,
+           'infos' => $infos,
+         ]);
+       }
 }

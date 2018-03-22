@@ -1,11 +1,11 @@
 .hotels{
-  width: 800px;
+  width: 700px;
   margin: 0 auto;
 }
 
 .hotel{
 
-width: 800px;
+width: 700px;
 height: 200px;
 color: white;
 background-color: #2b297d;
@@ -21,6 +21,7 @@ background-color: #2b297d;
 
 .hotel p{
 width: 500px;
+font-size: 11px;
 }
 
 .hotel img{
@@ -72,7 +73,7 @@ text-align: center;
 #verticale{
   width: 1px;
   height: 100px;
-  margin-left: 600px;
+  margin-left: 500px;
   margin-top: -60px
 }
 
@@ -191,11 +192,12 @@ text-align: center;
       float: none;
       margin-top: 0px;
       text-align: center;
-      margin-left: 0px;
+      margin-left: 30px;
     }
 
     .proximite h6{
    display: inline;
+
 
   }
 
@@ -333,7 +335,7 @@ text-align: center;
       float: none;
       margin-top: 0px;
       text-align: center;
-      margin-left: 0px;
+      margin-left: 30px;
     }
 
     .proximite h6{
@@ -475,7 +477,7 @@ text-align: center;
       float: none;
       margin-top: 0px;
       text-align: center;
-      margin-left: 0px;
+      margin-left: 50px;
     }
 
     .proximite h6{
@@ -707,14 +709,14 @@ text-align: center;
 @media (min-width: 1200px) {
 
   .meteo{
-    position: fixed;
+
     margin-left: 10px;
     margin-top: 90px;
     background-color: white;
   }
 
   #body_conv{
-    position: fixed;
+
     right: 0%;
     margin-top: 90px;
   }

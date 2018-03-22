@@ -1,0 +1,43 @@
+{% extends 'admin/baseadmin.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+{% include 'admin/header.html.twig' %}
+<div class="bodyadmin">
+    <h1>Galeries list</h1>
+    <ul>
+      <li>
+        <a class="btn btn-success" href="{{ path('galerie_new') }}">Create a new galerie</a>
+      </li>
+    </ul>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Picturename</th>
+                <th>images</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for galerie in galeries %}
+            <tr>
+                <td><a class="btn btn-primary btn-sm"  href="{{ path('galerie_show', { 'id': galerie.id }) }}">{{ galerie.id }}</a></td>
+                <td>{{ galerie.pictureName }}</td>
+                <td> <img id='picture_galerie' src="{{asset('uploads/'~ galerie.pictureName)}}" alt="mekkah medine hajj omra pilgrims"> </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="btn btn-warning btn-sm" href="{{ path('galerie_show', { 'id': galerie.id }) }}">show</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+      </div>
+{% endblock %}

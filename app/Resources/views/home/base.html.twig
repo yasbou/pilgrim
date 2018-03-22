@@ -5,9 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Welcome to Pilgrim!{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+        <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('css/styleHome.css') }}">
+        
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.jpg') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}

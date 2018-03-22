@@ -1,7 +1,7 @@
 .meteo{
-  position: fixed;
+  position: absolute;
   margin-left: 10px;
-  margin-top: 25px;
+  margin-top: 205px;
   background-color: white;
 }
 

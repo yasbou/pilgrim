@@ -1,0 +1,39 @@
+#playlist{
+  position: absolute;
+  right: 3%;
+  margin-top: 0px;
+
+}
+
+
+audio{
+  display: block;
+
+}
+
+@media (max-width: 575px) {
+
+  #playlist{
+    display: none;
+  }
+
+}
+
+@media (min-width: 576px) and (max-width: 811px) {
+
+  #playlist{
+    display: none;
+
+}
+}
+
+@media (min-width: 812px) and (max-width: 1199px) {
+
+  #playlist{
+    position: absolute;
+    margin-left: 5px;
+    background-color: white;
+  }
+
+
+ }

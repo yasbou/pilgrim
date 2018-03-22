@@ -462,14 +462,13 @@
 @media (min-width: 1200px) {
 
   .meteo{
-    position: fixed;
+
     margin-left: 10px;
-    margin-top: -200px;
     background-color: white;
   }
 
   #body_conv{
-    position: fixed;
+
     right: -5%;
     margin-top: -200px;
   }

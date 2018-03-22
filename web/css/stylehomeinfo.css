@@ -12,6 +12,9 @@ header{
   text-align: center;
 }
 
+#body_conv{
+  margin-top: 80px;
+}
 body h1{
   color: white;
   text-align: center;
@@ -105,6 +108,13 @@ text-transform: uppercase;
 
 .form_input{
   margin-top: 10px;
+}
+
+
+.amb_contact{
+display: inline-block;
+margin-top: 30px;
+font-size: 11px;
 }
 
 
